@@ -65,4 +65,12 @@ export default {
       title: 'All history cleared.',
     },
   },
+  languageSwitcher: {
+    selectPlaceholder: 'Select UI Language',
+  },
+  languages: {
+    en: 'English',
+    es: 'Español',
+    fr: 'Français',
+  },
 } as const;

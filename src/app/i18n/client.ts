@@ -12,6 +12,6 @@ export const {
   useCurrentLocale
 } = createI18nClient<Locale>({
   en: () => import('@/locales/en'),
-  // Add other locales here, e.g.:
-  // es: () => import('@/locales/es'), 
+  es: () => import('@/locales/es'),
+  fr: () => import('@/locales/fr'),
 });
