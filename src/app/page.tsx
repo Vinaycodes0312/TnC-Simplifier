@@ -38,7 +38,7 @@ export default function HomePage() {
         <div className="inline-flex items-center justify-center p-3 bg-primary/10 rounded-full mb-4">
            <ScrollText className="h-10 w-10 sm:h-12 sm:w-12 text-primary" />
         </div>
-        <h1 className="text-4xl sm:text-5xl font-bold text-primary tracking-tight">Legalese Lite</h1>
+        <h1 className="text-4xl sm:text-5xl font-bold text-primary tracking-tight">T&C Simplifier</h1>
         <p className="mt-3 text-lg sm:text-xl text-muted-foreground max-w-xl mx-auto">
           Tired of complicated legal jargon? Paste a URL to simplify terms and conditions into clear, concise bullet points.
         </p>
@@ -59,7 +59,7 @@ export default function HomePage() {
       )}
       
       <footer className="mt-16 mb-8 text-center text-sm text-muted-foreground">
-        <p>&copy; {new Date().getFullYear()} Legalese Lite. Understand better, faster.</p>
+        <p>&copy; {new Date().getFullYear()} T&C Simplifier. Understand better, faster.</p>
       </footer>
     </main>
   );

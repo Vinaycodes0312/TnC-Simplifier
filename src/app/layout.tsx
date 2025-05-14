@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Legalese Lite - Simplify Terms & Conditions',
+  title: 'T&C Simplifier - Simplify Terms & Conditions',
   description: 'Simplify complex terms and conditions into easy-to-understand bullet points.',
 };
 
