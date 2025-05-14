@@ -130,6 +130,9 @@ export default function HomePage() {
 
   return (
     <main className="flex flex-col items-center justify-start min-h-screen bg-background text-foreground p-4 sm:p-8 pt-12 sm:pt-20">
+      {/* Top page border */}
+      <div className="w-full max-w-2xl h-1 bg-primary mb-8"></div>
+
       <div className="text-center mb-10 sm:mb-12">
         <div className="inline-flex items-center justify-center p-3 bg-primary/10 rounded-full mb-4">
            <ScrollText className="h-10 w-10 sm:h-12 sm:w-12 text-primary" />
