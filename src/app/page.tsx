@@ -9,7 +9,7 @@ import { HistorySection } from '@/components/legalese-lite/history-section';
 import { simplifyTermsAndConditions } from '@/ai/flows/simplify-terms-and-conditions';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
-import { ScrollText, Terminal, Share2, History as HistoryIcon, Trash2 } from "lucide-react";
+import { ScrollText, Terminal, Share2 } from "lucide-react";
 import type { HistoryEntry } from '@/types';
 import { useToast } from "@/hooks/use-toast";
 
@@ -20,7 +20,7 @@ export default function HomePage() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [history, setHistory] = useState<HistoryEntry[]>([]);
-  const [currentUrl, setCurrentUrl] = useState<string>(""); 
+  const [currentUrl, setCurrentUrl] = useState<string>("");
   const { toast } = useToast();
 
   useEffect(() => {
@@ -48,14 +48,14 @@ export default function HomePage() {
     }
   };
 
-  const handleSimplify = async (url: string) => {
+  const handleSimplify = async (url: string, language: string) => {
     setIsLoading(true);
     setSummary(null);
     setError(null);
-    setCurrentUrl(url); // Store current URL for potential sharing
+    setCurrentUrl(url); 
 
     try {
-      const result = await simplifyTermsAndConditions({ url });
+      const result = await simplifyTermsAndConditions({ url, language });
       if (result.summary) {
         setSummary(result.summary);
         const newEntry: HistoryEntry = {

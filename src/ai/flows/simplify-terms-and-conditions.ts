@@ -14,6 +14,7 @@ import {z} from 'genkit';
 
 const SimplifyTermsAndConditionsInputSchema = z.object({
   url: z.string().describe('The URL of the terms and conditions page.'),
+  language: z.string().describe('The target language for the summary (e.g., "English", "Spanish", "French").')
 });
 export type SimplifyTermsAndConditionsInput = z.infer<
   typeof SimplifyTermsAndConditionsInputSchema
@@ -22,7 +23,7 @@ export type SimplifyTermsAndConditionsInput = z.infer<
 const SimplifyTermsAndConditionsOutputSchema = z.object({
   summary: z
     .string()
-    .describe('A simplified, bullet-point summary of the terms and conditions.'),
+    .describe('A simplified, bullet-point summary of the terms and conditions in the specified language.'),
 });
 export type SimplifyTermsAndConditionsOutput = z.infer<
   typeof SimplifyTermsAndConditionsOutputSchema
@@ -38,9 +39,10 @@ const prompt = ai.definePrompt({
   name: 'simplifyTermsAndConditionsPrompt',
   input: {schema: SimplifyTermsAndConditionsInputSchema},
   output: {schema: SimplifyTermsAndConditionsOutputSchema},
-  prompt: `You are an expert legal summarizer. You will be provided with the URL for a terms and conditions page, and your job is to extract the salient points and summarize them in a bullet-point format that is easy to understand.  Be sure to include important legal stipulations and user obligations.
+  prompt: `You are an expert legal summarizer. You will be provided with the URL for a terms and conditions page. Your job is to extract the salient points and summarize them in a bullet-point format that is easy to understand, in {{language}}. Be sure to include important legal stipulations and user obligations.
 
-URL: {{{url}}}`,
+URL: {{{url}}}
+Language for summary: {{language}}`,
 });
 
 const simplifyTermsAndConditionsFlow = ai.defineFlow(
