@@ -18,12 +18,8 @@ export function LanguageSwitcher() {
   const currentLocale = useCurrentLocale();
   const t = useI18n();
 
-  // It's good practice to type this if you have many languages
-  const languageNames: Record<Locale, string> = {
-    en: t('languages.en'),
-    es: t('languages.es'),
-    fr: t('languages.fr'),
-  };
+  // The old languageNames const is removed.
+  // We will directly use t() in the map function below.
 
   return (
     <div className="flex items-center gap-2 mt-4 sm:mt-0">
@@ -40,7 +36,8 @@ export function LanguageSwitcher() {
         <SelectContent>
           {SUPPORTED_LOCALES.map((locale) => (
             <SelectItem key={locale} value={locale}>
-              {languageNames[locale] || locale.toUpperCase()}
+              {/* Dynamically construct the translation key for each language name */}
+              {t(`languages.${locale}` as `languages.${Locale}`)}
             </SelectItem>
           ))}
         </SelectContent>
