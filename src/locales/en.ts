@@ -20,7 +20,6 @@ export default {
     description: 'Paste the URL of a terms and conditions page and choose your preferred language for the summary.',
     urlLabel: 'URL',
     urlPlaceholder: 'https://example.com/terms',
-    // Zod validation messages are kept in English for this iteration
     languageLabel: 'Summary Language',
     languagePlaceholder: 'Select language',
     buttonLoading: 'Simplifying...',
@@ -70,7 +69,17 @@ export default {
   },
   languages: {
     en: 'English',
-    es: 'Español',
-    fr: 'Français',
+    es: 'Spanish',
+    fr: 'French',
+    hi: 'Hindi',
+    bn: 'Bengali',
+    ta: 'Tamil',
+    te: 'Telugu',
+    mr: 'Marathi',
+    gu: 'Gujarati',
+    kn: 'Kannada',
+    ml: 'Malayalam',
+    pa: 'Punjabi',
+    or: 'Odia',
   },
 } as const;

@@ -1,0 +1,86 @@
+// src/locales/ml.ts
+// THIS IS A PLACEHOLDER FILE. PLEASE PROVIDE ACTUAL MALAYALAM TRANSLATIONS.
+export default {
+  app: {
+    title: 'T&C Simplifier (ML) - നിബന്ധനകൾ ലളിതമാക്കുക',
+    description: 'സങ്കീർണ്ണമായ നിബന്ധനകളും വ്യവസ്ഥകളും എളുപ്പത്തിൽ മനസ്സിലാക്കാവുന്ന ബുള്ളറ്റ് പോയിന്റുകളാക്കി ലളിതമാക്കുക.',
+  },
+  home: {
+    title: 'T&C Simplifier (ML)',
+    subtitle: 'സങ്കീർണ്ണമായ നിയമപരമായ പദപ്രയോഗങ്ങളിൽ മടുത്തോ? നിബന്ധനകളും വ്യവസ്ഥകളും വ്യക്തവും സംക്ഷിപ്തവുമായ ബുള്ളറ്റ് പോയിന്റുകളാക്കി ലളിതമാക്കാൻ ഒരു URL ഒട്ടിക്കുക.',
+    error: {
+      title: 'ലളിതമാക്കൽ പിശക്',
+      aiNoSummary: 'AI-ക്ക് ഒരു സംഗ്രഹം സൃഷ്ടിക്കാൻ കഴിഞ്ഞില്ല. ദയവായി മറ്റൊരു URL ശ്രമിക്കുക അല്ലെങ്കിൽ പേജ് ഉള്ളടക്കം പരിശോധിക്കുക.',
+      unexpected: 'നിബന്ധനകളും വ്യവസ്ഥകളും ലളിതമാക്കുമ്പോൾ ഒരു അപ്രതീക്ഷിത പിശക് സംഭവിച്ചു. ദയവായി വീണ്ടും ശ്രമിക്കുക.',
+    },
+    shareCurrentSummary: 'നിലവിലെ സംഗ്രഹം പങ്കിടുക',
+    footerText: '© {year} T&C Simplifier. നന്നായി, വേഗത്തിൽ മനസ്സിലാക്കുക.',
+  },
+  urlInputForm: {
+    title: 'നിബന്ധനകളും വ്യവസ്ഥകളും URL നൽകുക',
+    description: 'നിബന്ധനകളും വ്യവസ്ഥകളും പേജിന്റെ URL ഒട്ടിക്കുക, സംഗ്രഹത്തിനായി നിങ്ങളുടെ ഇഷ്ടപ്പെട്ട ഭാഷ തിരഞ്ഞെടുക്കുക.',
+    urlLabel: 'URL',
+    urlPlaceholder: 'https://example.com/terms',
+    languageLabel: 'സംഗ്രഹ ഭാഷ',
+    languagePlaceholder: 'ഭാഷ തിരഞ്ഞെടുക്കുക',
+    buttonLoading: 'ലളിതമാക്കുന്നു...',
+    buttonSimplify: 'നിബന്ധനകൾ ലളിതമാക്കുക',
+  },
+  summaryDisplay: {
+    title: 'ലളിതമാക്കിയ സംഗ്രഹം',
+    noPoints: 'സംഗ്രഹ പോയിന്റുകളൊന്നും ലഭ്യമല്ല.',
+  },
+  historySection: {
+    title: 'ലളിതമാക്കൽ ചരിത്രം',
+    clearAll: 'എല്ലാം മായ്ക്കുക',
+    description: 'മുമ്പ് ലളിതമാക്കിയ നിബന്ധനകളും വ്യവസ്ഥകളും.',
+    empty: 'ഇതുവരെ ചരിത്രമൊന്നുമില്ല. അവ ഇവിടെ കാണുന്നതിന് ചില നിബന്ധനകൾ ലളിതമാക്കുക.',
+    share: 'പങ്കിടുക',
+    delete: 'മായ്ക്കുക',
+  },
+  toast: {
+    storageError: {
+      title: 'സംഭരണ ​​പിശക്',
+      description: 'ചരിത്രം സംരക്ഷിക്കാൻ കഴിഞ്ഞില്ല. നിങ്ങളുടെ ബ്രൗസർ സംഭരണം നിറഞ്ഞിരിക്കാം അല്ലെങ്കിൽ പ്രവർത്തനരഹിതമാക്കിയിരിക്കാം.',
+    },
+    sharedSuccessfully: {
+      title: 'വിജയകരമായി പങ്കിട്ടു!',
+    },
+    shareError: {
+      title: 'പങ്കിടൽ പിശക്',
+      description: 'സംഗ്രഹം പങ്കിടാൻ കഴിഞ്ഞില്ല.',
+    },
+    copiedToClipboard: {
+      title: 'ക്ലിപ്പ്ബോർഡിലേക്ക് പകർത്തി!',
+      description: 'വെബ് ഷെയർ ലഭ്യമല്ലാത്തതിനാൽ സംഗ്രഹവും URL-ഉം പകർത്തി.',
+    },
+    copyError: {
+      title: 'പകർത്തൽ പിശക്',
+      description: 'സംഗ്രഹം ക്ലിപ്പ്ബോർഡിലേക്ക് പകർത്താൻ കഴിഞ്ഞില്ല.',
+    },
+    historyItemDeleted: {
+      title: 'ചരിത്ര ഇനം ഇല്ലാതാക്കി.',
+    },
+    allHistoryCleared: {
+      title: 'എല്ലാ ചരിത്രവും മായ്ച്ചു.',
+    },
+  },
+  languageSwitcher: {
+    selectPlaceholder: 'UI ഭാഷ തിരഞ്ഞെടുക്കുക',
+  },
+  languages: {
+    en: 'English',
+    es: 'Spanish',
+    fr: 'French',
+    hi: 'Hindi',
+    bn: 'Bengali',
+    ta: 'Tamil',
+    te: 'Telugu',
+    mr: 'Marathi',
+    gu: 'Gujarati',
+    kn: 'Kannada',
+    ml: 'മലയാളം',
+    pa: 'Punjabi',
+    or: 'Odia',
+  },
+} as const;
