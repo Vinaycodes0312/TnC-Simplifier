@@ -72,5 +72,15 @@ export default {
     en: 'Anglais',
     es: 'Espagnol',
     fr: 'Français',
+    hi: 'Hindi', // Placeholder
+    bn: 'Bengali', // Placeholder
+    ta: 'Tamoul', // Placeholder
+    te: 'Télougou', // Placeholder
+    mr: 'Marathi', // Placeholder
+    gu: 'Gujarati', // Placeholder
+    kn: 'Kannada', // Placeholder
+    ml: 'Malayalam', // Placeholder
+    pa: 'Pendjabi', // Placeholder
+    or: 'Odia', // Placeholder
   },
 } as const;

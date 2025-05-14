@@ -1,0 +1,86 @@
+// src/locales/ta.ts
+// THIS IS A PLACEHOLDER FILE. PLEASE PROVIDE ACTUAL TAMIL TRANSLATIONS.
+export default {
+  app: {
+    title: 'T&C Simplifier (TA) - விதிமுறைகளை எளிதாக்குங்கள்',
+    description: 'சிக்கலான விதிமுறைகளையும் நிபந்தனைகளையும் எளிதில் புரிந்துகொள்ளக்கூடிய புல்லட் புள்ளிகளில் எளிதாக்குங்கள்.',
+  },
+  home: {
+    title: 'T&C Simplifier (TA)',
+    subtitle: 'சிக்கலான சட்ட சொற்களஞ்சியத்தால் சோர்வாக இருக்கிறதா? விதிமுறைகளையும் நிபந்தனைகளையும் தெளிவான, சுருக்கமான புல்லட் புள்ளிகளில் எளிதாக்க ஒரு URL ஐ ஒட்டவும்.',
+    error: {
+      title: 'எளிதாக்குதல் பிழை',
+      aiNoSummary: 'AI ஒரு சுருக்கத்தை உருவாக்க முடியவில்லை. தயவுசெய்து வேறு URL ஐ முயற்சிக்கவும் அல்லது பக்க உள்ளடக்கத்தை சரிபார்க்கவும்.',
+      unexpected: 'விதிமுறைகளையும் நிபந்தனைகளையும் எளிதாக்கும்போது எதிர்பாராத பிழை ஏற்பட்டது. தயவுசெய்து மீண்டும் முயற்சிக்கவும்.',
+    },
+    shareCurrentSummary: 'தற்போதைய சுருக்கத்தைப் பகிரவும்',
+    footerText: '© {year} T&C Simplifier. சிறப்பாகவும் வேகமாகவும் புரிந்து கொள்ளுங்கள்.',
+  },
+  urlInputForm: {
+    title: 'விதிமுறைகள் மற்றும் நிபந்தனைகள் URL ஐ உள்ளிடவும்',
+    description: 'விதிமுறைகள் மற்றும் நிபந்தனைகள் பக்கத்தின் URL ஐ ஒட்டவும் மற்றும் சுருக்கத்திற்கு நீங்கள் விரும்பும் மொழியைத் தேர்ந்தெடுக்கவும்.',
+    urlLabel: 'URL',
+    urlPlaceholder: 'https://example.com/terms',
+    languageLabel: 'சுருக்க மொழி',
+    languagePlaceholder: 'மொழியைத் தேர்ந்தெடுக்கவும்',
+    buttonLoading: 'எளிதாக்கப்படுகிறது...',
+    buttonSimplify: 'விதிமுறைகளை எளிதாக்கு',
+  },
+  summaryDisplay: {
+    title: 'எளிதாக்கப்பட்ட சுருக்கம்',
+    noPoints: 'சுருக்க புள்ளிகள் எதுவும் கிடைக்கவில்லை.',
+  },
+  historySection: {
+    title: 'எளிதாக்குதல் வரலாறு',
+    clearAll: 'அனைத்தையும் அழி',
+    description: 'முன்னர் எளிதாக்கப்பட்ட விதிமுறைகள் மற்றும் நிபந்தனைகள்.',
+    empty: 'இன்னும் வரலாறு இல்லை. சில விதிமுறைகளை எளிதாக்கி இங்கே பார்க்கவும்.',
+    share: 'பகிர்',
+    delete: 'நீக்கு',
+  },
+  toast: {
+    storageError: {
+      title: 'சேமிப்பக பிழை',
+      description: 'வரலாற்றைச் சேமிக்க முடியவில்லை. உங்கள் உலாவி சேமிப்பகம் நிரம்பியிருக்கலாம் அல்லது முடக்கப்பட்டிருக்கலாம்.',
+    },
+    sharedSuccessfully: {
+      title: 'வெற்றிகரமாக பகிரப்பட்டது!',
+    },
+    shareError: {
+      title: 'பகிர்வு பிழை',
+      description: 'சுருக்கத்தைப் பகிர முடியவில்லை.',
+    },
+    copiedToClipboard: {
+      title: 'கிளிப்போர்டுக்கு நகலெடுக்கப்பட்டது!',
+      description: 'இணையப் பகிர்வு கிடைக்காததால் சுருக்கம் மற்றும் URL நகலெடுக்கப்பட்டது.',
+    },
+    copyError: {
+      title: 'நகலெடுக்கும் பிழை',
+      description: 'சுருக்கத்தை கிளிப்போர்டுக்கு நகலெடுக்க முடியவில்லை.',
+    },
+    historyItemDeleted: {
+      title: 'வரலாற்று உருப்படி நீக்கப்பட்டது.',
+    },
+    allHistoryCleared: {
+      title: 'அனைத்து வரலாறும் அழிக்கப்பட்டது.',
+    },
+  },
+  languageSwitcher: {
+    selectPlaceholder: 'UI மொழியைத் தேர்ந்தெடுக்கவும்',
+  },
+  languages: {
+    en: 'English',
+    es: 'Spanish',
+    fr: 'French',
+    hi: 'Hindi',
+    bn: 'Bengali',
+    ta: 'தமிழ்',
+    te: 'Telugu',
+    mr: 'Marathi',
+    gu: 'Gujarati',
+    kn: 'Kannada',
+    ml: 'Malayalam',
+    pa: 'Punjabi',
+    or: 'Odia',
+  },
+} as const;

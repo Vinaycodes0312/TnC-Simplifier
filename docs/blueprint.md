@@ -1,4 +1,4 @@
-# **App Name**: Legalese Lite
+# **App Name**: T&C Simplifier
 
 ## Core Features:
 
