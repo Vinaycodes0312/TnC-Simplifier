@@ -1,11 +1,11 @@
 // src/locales/bn.ts
 export default {
   app: {
-    title: 'T&C Simplifier (BN) - শর্তাবলী সরল করুন',
+    title: 'T&C Simplifier - শর্তাবলী সরল করুন',
     description: 'জটিল শর্তাবলী সহজবোধ্য বুলেট পয়েন্টে সরল করুন।',
   },
   home: {
-    title: 'T&C Simplifier (BN)',
+    title: 'T&C Simplifier',
     subtitle: 'জটিল আইনি পরিভাষায় ক্লান্ত? শর্তাবলী পরিষ্কার, সংক্ষিপ্ত বুলেট পয়েন্টে সরল করতে একটি URL পেস্ট করুন।',
     error: {
       title: 'সরলীকরণ ত্রুটি',

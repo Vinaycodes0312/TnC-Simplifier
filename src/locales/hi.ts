@@ -1,11 +1,11 @@
 // src/locales/hi.ts
 export default {
   app: {
-    title: 'T&C Simplifier (HI) - नियम और शर्तें सरल बनाएं',
+    title: 'T&C Simplifier - नियम और शर्तें सरल बनाएं',
     description: 'जटिल नियमों और शर्तों को समझने में आसान बुलेट बिंदुओं में सरल बनाएं।',
   },
   home: {
-    title: 'T&C Simplifier (HI)',
+    title: 'T&C Simplifier',
     subtitle: 'जटिल कानूनी शब्दावली से थक गए हैं? नियमों और शर्तों को स्पष्ट, संक्षिप्त बुलेट बिंदुओं में सरल बनाने के लिए एक URL पेस्ट करें।',
     error: {
       title: 'सरलीकरण त्रुटि',

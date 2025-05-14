@@ -1,11 +1,11 @@
 // src/locales/pa.ts
 export default {
   app: {
-    title: 'T&C Simplifier (PA) - ਨਿਯਮ ਅਤੇ ਸ਼ਰਤਾਂ ਨੂੰ ਸਰਲ ਬਣਾਓ',
+    title: 'T&C Simplifier - ਨਿਯਮ ਅਤੇ ਸ਼ਰਤਾਂ ਨੂੰ ਸਰਲ ਬਣਾਓ',
     description: 'ਗੁੰਝਲਦਾਰ ਨਿਯਮਾਂ ਅਤੇ ਸ਼ਰਤਾਂ ਨੂੰ ਸਮਝਣ ਵਿੱਚ ਆਸਾਨ ਬੁਲੇਟ ਪੁਆਇੰਟਾਂ ਵਿੱਚ ਸਰਲ ਬਣਾਓ।',
   },
   home: {
-    title: 'T&C Simplifier (PA)',
+    title: 'T&C Simplifier',
     subtitle: 'ਗੁੰਝਲਦਾਰ ਕਾਨੂੰਨੀ ਸ਼ਬਦਾਵਲੀ ਤੋਂ ਥੱਕ ਗਏ ਹੋ? ਨਿਯਮਾਂ ਅਤੇ ਸ਼ਰਤਾਂ ਨੂੰ ਸਪਸ਼ਟ, ਸੰਖੇਪ ਬੁਲੇਟ ਪੁਆਇੰਟਾਂ ਵਿੱਚ ਸਰਲ ਬਣਾਉਣ ਲਈ ਇੱਕ URL ਪੇਸਟ ਕਰੋ।',
     error: {
       title: 'ਸਰਲੀਕਰਨ ਗਲਤੀ',

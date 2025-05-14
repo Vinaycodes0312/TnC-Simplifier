@@ -1,11 +1,11 @@
 // src/locales/or.ts
 export default {
   app: {
-    title: 'T&C Simplifier (OR) - ସର୍ତ୍ତାବଳୀ ସରଳ କରନ୍ତୁ',
+    title: 'T&C Simplifier - ସର୍ତ୍ତାବଳୀ ସରଳ କରନ୍ତୁ',
     description: 'ଜଟିଳ ସର୍ତ୍ତାବଳୀ ଏବଂ ଅବସ୍ଥାକୁ ସହଜରେ ବୁଝିହେଉଥିବା ବୁଲେଟ୍ ପଏଣ୍ଟରେ ସରଳ କରନ୍ତୁ |',
   },
   home: {
-    title: 'T&C Simplifier (OR)',
+    title: 'T&C Simplifier',
     subtitle: 'ଜଟିଳ ଆଇନଗତ ଶବ୍ଦାବଳୀରେ କ୍ଳାନ୍ତ କି? ସର୍ତ୍ତାବଳୀ ଏବଂ ଅବସ୍ଥାକୁ ସ୍ପଷ୍ଟ, ସଂକ୍ଷିପ୍ତ ବୁଲେଟ୍ ପଏଣ୍ଟରେ ସରଳ କରିବାକୁ ଏକ URL ପେଷ୍ଟ କରନ୍ତୁ |',
     error: {
       title: 'ସରଳୀକରଣ ତ୍ରୁଟି',

@@ -1,11 +1,11 @@
 // src/locales/fr.ts
 export default {
   app: {
-    title: 'T&C Simplifier (FR) - Simplifiez les Termes et Conditions',
+    title: 'T&C Simplifier - Simplifiez les Termes et Conditions',
     description: 'Simplifiez les termes et conditions complexes en points faciles à comprendre.',
   },
   home: {
-    title: 'T&C Simplifier (FR)',
+    title: 'T&C Simplifier',
     subtitle: 'Fatigué du jargon juridique compliqué ? Collez une URL pour simplifier les termes et conditions en points clairs et concis.',
     error: {
       title: 'Erreur de Simplification',
