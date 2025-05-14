@@ -1,7 +1,7 @@
 // src/locales/es.ts
 export default {
   app: {
-    title: 'T&C Simplifier - Simplifica Términos y Condiciones',
+    title: 'T&C Simplifier',
     description: 'Simplifica términos y condiciones complejos en puntos fáciles de entender.',
   },
   home: {
@@ -14,6 +14,8 @@ export default {
     },
     shareCurrentSummary: 'Compartir Resumen Actual',
     footerText: '© {year} T&C Simplifier. Entiende mejor, más rápido.',
+    helpAndSupport: 'Ayuda y Soporte',
+    developerContact: 'Contacto del Desarrollador',
   },
   urlInputForm: {
     title: 'Ingresa la URL de los Términos y Condiciones',
@@ -82,4 +84,25 @@ export default {
     pa: 'ਪੰਜਾਬੀ',
     or: 'ଓଡ଼ିଆ',
   },
+  helpDialog: {
+    title: "Ayuda y Soporte",
+    q1Title: "¿Cómo usar T&C Simplifier?",
+    q1Answer1: "1. Pega la URL de la página de términos y condiciones que deseas simplificar en el campo de entrada.",
+    q1Answer2: "2. Selecciona tu idioma preferido para el resumen en el menú desplegable.",
+    q1Answer3: "3. Haz clic en el botón 'Simplificar Términos'.",
+    q1Answer4: "4. El resumen simplificado aparecerá debajo. Luego puedes compartirlo o encontrarlo más tarde en tu historial.",
+    q2Title: "¿Se guardan mis datos?",
+    q2Answer: "Tu historial de simplificación (URL, resumen, marca de tiempo) se guarda localmente en el almacenamiento de tu navegador. No se envía a ningún servidor. Puedes borrar tu historial en cualquier momento.",
+    q3Title: "¿Qué pasa si obtengo un error?",
+    q3Answer: "Asegúrate de que la URL sea correcta y de acceso público. Algunas estructuras de página complejas o documentos muy largos pueden causar problemas ocasionalmente. Intenta con una URL diferente si los problemas persisten.",
+  },
+  contactDialog: {
+    title: "Contacto del Desarrollador",
+    intro: "Para consultas, comentarios o soporte, por favor contacta a:",
+    email: "developer@example.com", // Placeholder, translate if needed or keep as is.
+    note: "Por favor, ten en cuenta: Esta es una aplicación de demostración. La dirección de correo electrónico es un marcador de posición.",
+  },
+  dialog: {
+    close: "Cerrar",
+  }
 } as const;
