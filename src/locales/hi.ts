@@ -1,5 +1,4 @@
 // src/locales/hi.ts
-// THIS IS A PLACEHOLDER FILE. PLEASE PROVIDE ACTUAL HINDI TRANSLATIONS.
 export default {
   app: {
     title: 'T&C Simplifier (HI) - नियम और शर्तें सरल बनाएं',
@@ -11,7 +10,7 @@ export default {
     error: {
       title: 'सरलीकरण त्रुटि',
       aiNoSummary: 'AI सारांश उत्पन्न नहीं कर सका। कृपया एक भिन्न URL आज़माएँ या पृष्ठ सामग्री की जाँच करें।',
-      unexpected: 'नियमों और शर्तों को सरल करते समय एक अप्रत्याशિત त्रुटि हुई। कृपया पुनः प्रयास करें।',
+      unexpected: 'नियमों और शर्तों को सरल करते समय एक अप्रत्याशित त्रुटि हुई। कृपया पुनः प्रयास करें।',
     },
     shareCurrentSummary: 'वर्तमान सारांश साझा करें',
     footerText: '© {year} T&C Simplifier. बेहतर, तेजी से समझें।',
@@ -70,17 +69,17 @@ export default {
   },
   languages: {
     en: 'English',
-    es: 'Spanish',
-    fr: 'French',
+    es: 'Español',
+    fr: 'Français',
     hi: 'हिन्दी',
-    bn: 'Bengali',
-    ta: 'Tamil',
-    te: 'Telugu',
-    mr: 'Marathi',
-    gu: 'Gujarati',
-    kn: 'Kannada',
-    ml: 'Malayalam',
-    pa: 'Punjabi',
-    or: 'Odia',
+    bn: 'বাংলা',
+    ta: 'தமிழ்',
+    te: 'తెలుగు',
+    mr: 'मराठी',
+    gu: 'ગુજરાતી',
+    kn: 'ಕನ್ನಡ',
+    ml: 'മലയാളം',
+    pa: 'ਪੰਜਾਬੀ',
+    or: 'ଓଡ଼ିଆ',
   },
 } as const;

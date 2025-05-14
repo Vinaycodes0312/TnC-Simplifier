@@ -1,5 +1,4 @@
 // src/locales/te.ts
-// THIS IS A PLACEHOLDER FILE. PLEASE PROVIDE ACTUAL TELUGU TRANSLATIONS.
 export default {
   app: {
     title: 'T&C Simplifier (TE) - నిబంధనలను సరళీకరించండి',
@@ -70,17 +69,17 @@ export default {
   },
   languages: {
     en: 'English',
-    es: 'Spanish',
-    fr: 'French',
-    hi: 'Hindi',
-    bn: 'Bengali',
-    ta: 'Tamil',
+    es: 'Español',
+    fr: 'Français',
+    hi: 'हिन्दी',
+    bn: 'বাংলা',
+    ta: 'தமிழ்',
     te: 'తెలుగు',
-    mr: 'Marathi',
-    gu: 'Gujarati',
-    kn: 'Kannada',
-    ml: 'Malayalam',
-    pa: 'Punjabi',
-    or: 'Odia',
+    mr: 'मराठी',
+    gu: 'ગુજરાતી',
+    kn: 'ಕನ್ನಡ',
+    ml: 'മലയാളം',
+    pa: 'ਪੰਜਾਬੀ',
+    or: 'ଓଡ଼ିଆ',
   },
 } as const;

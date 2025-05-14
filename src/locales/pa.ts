@@ -1,5 +1,4 @@
 // src/locales/pa.ts
-// THIS IS A PLACEHOLDER FILE. PLEASE PROVIDE ACTUAL PUNJABI TRANSLATIONS.
 export default {
   app: {
     title: 'T&C Simplifier (PA) - ਨਿਯਮ ਅਤੇ ਸ਼ਰਤਾਂ ਨੂੰ ਸਰਲ ਬਣਾਓ',
@@ -70,17 +69,17 @@ export default {
   },
   languages: {
     en: 'English',
-    es: 'Spanish',
-    fr: 'French',
-    hi: 'Hindi',
-    bn: 'Bengali',
-    ta: 'Tamil',
-    te: 'Telugu',
-    mr: 'Marathi',
-    gu: 'Gujarati',
-    kn: 'Kannada',
-    ml: 'Malayalam',
+    es: 'Español',
+    fr: 'Français',
+    hi: 'हिन्दी',
+    bn: 'বাংলা',
+    ta: 'தமிழ்',
+    te: 'తెలుగు',
+    mr: 'मराठी',
+    gu: 'ગુજરાતી',
+    kn: 'ಕನ್ನಡ',
+    ml: 'മലയാളം',
     pa: 'ਪੰਜਾਬੀ',
-    or: 'Odia',
+    or: 'ଓଡ଼ିଆ',
   },
 } as const;
