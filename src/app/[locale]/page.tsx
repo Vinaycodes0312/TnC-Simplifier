@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import { UrlInputForm } from '@/components/legalese-lite/url-input-form';
 import { SummaryDisplay } from '@/components/legalese-lite/summary-display';
 import { HistorySection } from '@/components/legalese-lite/history-section';
+import { LanguageSwitcher } from '@/components/language-switcher'; // Import LanguageSwitcher
 import { simplifyTermsAndConditions } from '@/ai/flows/simplify-terms-and-conditions';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
@@ -43,7 +44,7 @@ export default function HomePage() {
         description: t('toast.storageError.description'),
       });
     }
-  }, [t]); // Add t to dependencies if used in effect
+  }, [t, toast]); // Added toast to dependencies
 
   const saveHistory = (newHistory: HistoryEntry[]) => {
     try {
@@ -92,14 +93,13 @@ export default function HomePage() {
     if (navigator.share) {
       try {
         await navigator.share({
-          title: `Summary for ${shareUrl}`, // This title could be internationalized too if needed
-          text: `Simplified T&C for ${shareUrl}:\n\n${shareSummary}`, // This text structure too
+          title: t('home.title') + ` for ${shareUrl}`,
+          text: `Simplified T&C for ${shareUrl}:\n\n${shareSummary}`,
           url: shareUrl,
         });
         toast({ title: t('toast.sharedSuccessfully.title') });
       } catch (err) {
         console.error('Error sharing:', err);
-        // The error from navigator.share might not be user-friendly, so a generic message is often better.
         setError(t('toast.shareError.description')); 
         toast({ variant: "destructive", title: t('toast.shareError.title'), description: t('toast.shareError.description')});
       }
@@ -169,8 +169,9 @@ export default function HomePage() {
         currentLocale={currentLocale}
       />
       
-      <footer className="mt-16 mb-8 text-center text-sm text-muted-foreground">
-        <p>{t('home.footerText', { year: new Date().getFullYear() })}</p>
+      <footer className="mt-16 mb-8 w-full max-w-2xl flex flex-col sm:flex-row items-center justify-between text-sm text-muted-foreground">
+        <p className="mb-4 sm:mb-0">{t('home.footerText', { year: new Date().getFullYear() })}</p>
+        <LanguageSwitcher />
       </footer>
     </main>
   );
