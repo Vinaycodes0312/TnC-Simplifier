@@ -45,6 +45,15 @@ const languages = [
   { value: "Japanese", label: "日本語" },
   { value: "Chinese (Simplified)", label: "中文 (简体)" },
   { value: "Hindi", label: "हिन्दी" },
+  { value: "Bengali", label: "বাংলা" },
+  { value: "Tamil", label: "தமிழ்" },
+  { value: "Telugu", label: "తెలుగు" },
+  { value: "Marathi", label: "मराठी" },
+  { value: "Gujarati", label: "ગુજરાતી" },
+  { value: "Kannada", label: "ಕನ್ನಡ" },
+  { value: "Malayalam", label: "മലയാളം" },
+  { value: "Punjabi", label: "ਪੰਜਾਬੀ" },
+  { value: "Odia", label: "ଓଡ଼ିଆ" },
   { value: "Portuguese", label: "Português" },
 ];
 
