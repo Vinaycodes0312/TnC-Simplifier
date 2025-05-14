@@ -1,5 +1,4 @@
 // src/locales/bn.ts
-// THIS IS A PLACEHOLDER FILE. PLEASE PROVIDE ACTUAL BENGALI TRANSLATIONS.
 export default {
   app: {
     title: 'T&C Simplifier (BN) - শর্তাবলী সরল করুন',
@@ -70,17 +69,17 @@ export default {
   },
   languages: {
     en: 'English',
-    es: 'Spanish',
-    fr: 'French',
-    hi: 'Hindi',
+    es: 'Español',
+    fr: 'Français',
+    hi: 'हिन्दी',
     bn: 'বাংলা',
-    ta: 'Tamil',
-    te: 'Telugu',
-    mr: 'Marathi',
-    gu: 'Gujarati',
-    kn: 'Kannada',
-    ml: 'Malayalam',
-    pa: 'Punjabi',
-    or: 'Odia',
+    ta: 'தமிழ்',
+    te: 'తెలుగు',
+    mr: 'मराठी',
+    gu: 'ગુજરાતી',
+    kn: 'ಕನ್ನಡ',
+    ml: 'മലയാളം',
+    pa: 'ਪੰਜਾਬੀ',
+    or: 'ଓଡ଼ିଆ',
   },
 } as const;

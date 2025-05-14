@@ -1,5 +1,4 @@
 // src/locales/kn.ts
-// THIS IS A PLACEHOLDER FILE. PLEASE PROVIDE ACTUAL KANNADA TRANSLATIONS.
 export default {
   app: {
     title: 'T&C Simplifier (KN) - ನಿಯಮಗಳು ಮತ್ತು ಷರತ್ತುಗಳನ್ನು ಸರಳಗೊಳಿಸಿ',
@@ -70,17 +69,17 @@ export default {
   },
   languages: {
     en: 'English',
-    es: 'Spanish',
-    fr: 'French',
-    hi: 'Hindi',
-    bn: 'Bengali',
-    ta: 'Tamil',
-    te: 'Telugu',
-    mr: 'Marathi',
-    gu: 'Gujarati',
+    es: 'Español',
+    fr: 'Français',
+    hi: 'हिन्दी',
+    bn: 'বাংলা',
+    ta: 'தமிழ்',
+    te: 'తెలుగు',
+    mr: 'मराठी',
+    gu: 'ગુજરાતી',
     kn: 'ಕನ್ನಡ',
-    ml: 'Malayalam',
-    pa: 'Punjabi',
-    or: 'Odia',
+    ml: 'മലയാളം',
+    pa: 'ਪੰਜਾਬੀ',
+    or: 'ଓଡ଼ିଆ',
   },
 } as const;

@@ -1,5 +1,4 @@
 // src/locales/or.ts
-// THIS IS A PLACEHOLDER FILE. PLEASE PROVIDE ACTUAL ODIA TRANSLATIONS.
 export default {
   app: {
     title: 'T&C Simplifier (OR) - ସର୍ତ୍ତାବଳୀ ସରଳ କରନ୍ତୁ',
@@ -70,17 +69,17 @@ export default {
   },
   languages: {
     en: 'English',
-    es: 'Spanish',
-    fr: 'French',
-    hi: 'Hindi',
-    bn: 'Bengali',
-    ta: 'Tamil',
-    te: 'Telugu',
-    mr: 'Marathi',
-    gu: 'Gujarati',
-    kn: 'Kannada',
-    ml: 'Malayalam',
-    pa: 'Punjabi',
+    es: 'Español',
+    fr: 'Français',
+    hi: 'हिन्दी',
+    bn: 'বাংলা',
+    ta: 'தமிழ்',
+    te: 'తెలుగు',
+    mr: 'मराठी',
+    gu: 'ગુજરાતી',
+    kn: 'ಕನ್ನಡ',
+    ml: 'മലയാളം',
+    pa: 'ਪੰਜਾਬੀ',
     or: 'ଓଡ଼ିଆ',
   },
 } as const;

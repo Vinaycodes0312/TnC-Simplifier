@@ -1,5 +1,4 @@
 // src/locales/fr.ts
-// THIS IS A PLACEHOLDER FILE. PLEASE PROVIDE ACTUAL FRENCH TRANSLATIONS.
 export default {
   app: {
     title: 'T&C Simplifier (FR) - Simplifiez les Termes et Conditions',
@@ -69,18 +68,18 @@ export default {
     selectPlaceholder: "Sélectionner la Langue de l'IU",
   },
   languages: {
-    en: 'Anglais',
-    es: 'Espagnol',
+    en: 'English',
+    es: 'Español',
     fr: 'Français',
-    hi: 'Hindi', // Placeholder
-    bn: 'Bengali', // Placeholder
-    ta: 'Tamoul', // Placeholder
-    te: 'Télougou', // Placeholder
-    mr: 'Marathi', // Placeholder
-    gu: 'Gujarati', // Placeholder
-    kn: 'Kannada', // Placeholder
-    ml: 'Malayalam', // Placeholder
-    pa: 'Pendjabi', // Placeholder
-    or: 'Odia', // Placeholder
+    hi: 'हिन्दी',
+    bn: 'বাংলা',
+    ta: 'தமிழ்',
+    te: 'తెలుగు',
+    mr: 'मराठी',
+    gu: 'ગુજરાતી',
+    kn: 'ಕನ್ನಡ',
+    ml: 'മലയാളം',
+    pa: 'ਪੰਜਾਬੀ',
+    or: 'ଓଡ଼ିଆ',
   },
 } as const;

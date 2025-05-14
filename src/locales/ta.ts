@@ -1,5 +1,4 @@
 // src/locales/ta.ts
-// THIS IS A PLACEHOLDER FILE. PLEASE PROVIDE ACTUAL TAMIL TRANSLATIONS.
 export default {
   app: {
     title: 'T&C Simplifier (TA) - விதிமுறைகளை எளிதாக்குங்கள்',
@@ -70,17 +69,17 @@ export default {
   },
   languages: {
     en: 'English',
-    es: 'Spanish',
-    fr: 'French',
-    hi: 'Hindi',
-    bn: 'Bengali',
+    es: 'Español',
+    fr: 'Français',
+    hi: 'हिन्दी',
+    bn: 'বাংলা',
     ta: 'தமிழ்',
-    te: 'Telugu',
-    mr: 'Marathi',
-    gu: 'Gujarati',
-    kn: 'Kannada',
-    ml: 'Malayalam',
-    pa: 'Punjabi',
-    or: 'Odia',
+    te: 'తెలుగు',
+    mr: 'मराठी',
+    gu: 'ગુજરાતી',
+    kn: 'ಕನ್ನಡ',
+    ml: 'മലയാളം',
+    pa: 'ਪੰਜਾਬੀ',
+    or: 'ଓଡ଼ିଆ',
   },
 } as const;

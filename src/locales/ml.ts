@@ -1,5 +1,4 @@
 // src/locales/ml.ts
-// THIS IS A PLACEHOLDER FILE. PLEASE PROVIDE ACTUAL MALAYALAM TRANSLATIONS.
 export default {
   app: {
     title: 'T&C Simplifier (ML) - നിബന്ധനകൾ ലളിതമാക്കുക',
@@ -70,17 +69,17 @@ export default {
   },
   languages: {
     en: 'English',
-    es: 'Spanish',
-    fr: 'French',
-    hi: 'Hindi',
-    bn: 'Bengali',
-    ta: 'Tamil',
-    te: 'Telugu',
-    mr: 'Marathi',
-    gu: 'Gujarati',
-    kn: 'Kannada',
+    es: 'Español',
+    fr: 'Français',
+    hi: 'हिन्दी',
+    bn: 'বাংলা',
+    ta: 'தமிழ்',
+    te: 'తెలుగు',
+    mr: 'मराठी',
+    gu: 'ગુજરાતી',
+    kn: 'ಕನ್ನಡ',
     ml: 'മലയാളം',
-    pa: 'Punjabi',
-    or: 'Odia',
+    pa: 'ਪੰਜਾਬੀ',
+    or: 'ଓଡ଼ିଆ',
   },
 } as const;
