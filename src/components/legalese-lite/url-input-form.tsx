@@ -2,6 +2,7 @@
 "use client";
 
 import type { FC } from 'react';
+import { useState } from 'react';
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -15,8 +16,15 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Link as LinkIcon, Wand2, Loader2 } from "lucide-react";
+import { Link as LinkIcon, Wand2, Loader2, Languages } from "lucide-react";
 
 const urlSchema = z.object({
   url: z.string().url({ message: "Please enter a valid URL." }),
@@ -25,11 +33,24 @@ const urlSchema = z.object({
 type UrlFormData = z.infer<typeof urlSchema>;
 
 interface UrlInputFormProps {
-  onSimplify: (url: string) => Promise<void>;
+  onSimplify: (url: string, language: string) => Promise<void>;
   isLoading: boolean;
 }
 
+const languages = [
+  { value: "English", label: "English" },
+  { value: "Spanish", label: "Español" },
+  { value: "French", label: "Français" },
+  { value: "German", label: "Deutsch" },
+  { value: "Japanese", label: "日本語" },
+  { value: "Chinese (Simplified)", label: "中文 (简体)" },
+  { value: "Hindi", label: "हिन्दी" },
+  { value: "Portuguese", label: "Português" },
+];
+
 export const UrlInputForm: FC<UrlInputFormProps> = ({ onSimplify, isLoading }) => {
+  const [selectedLanguage, setSelectedLanguage] = useState<string>(languages[0].value);
+
   const form = useForm<UrlFormData>({
     resolver: zodResolver(urlSchema),
     defaultValues: {
@@ -38,7 +59,7 @@ export const UrlInputForm: FC<UrlInputFormProps> = ({ onSimplify, isLoading }) =
   });
 
   async function onSubmit(data: UrlFormData) {
-    await onSimplify(data.url);
+    await onSimplify(data.url, selectedLanguage);
   }
 
   return (
@@ -46,7 +67,7 @@ export const UrlInputForm: FC<UrlInputFormProps> = ({ onSimplify, isLoading }) =
       <CardHeader>
         <CardTitle className="text-2xl">Enter Terms & Conditions URL</CardTitle>
         <CardDescription>
-          Paste the URL of a terms and conditions page to get a simplified summary.
+          Paste the URL of a terms and conditions page and choose your preferred language for the summary.
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -57,7 +78,7 @@ export const UrlInputForm: FC<UrlInputFormProps> = ({ onSimplify, isLoading }) =
               name="url"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel htmlFor="url-input" className="sr-only">URL</FormLabel>
+                  <FormLabel htmlFor="url-input">URL</FormLabel>
                   <div className="relative">
                     <LinkIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
                     <FormControl>
@@ -74,6 +95,28 @@ export const UrlInputForm: FC<UrlInputFormProps> = ({ onSimplify, isLoading }) =
                 </FormItem>
               )}
             />
+
+            <FormItem>
+              <FormLabel htmlFor="language-select">Summary Language</FormLabel>
+              <div className="relative">
+                <Languages className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                <Select value={selectedLanguage} onValueChange={setSelectedLanguage}>
+                  <FormControl>
+                    <SelectTrigger id="language-select" className="pl-10 text-base">
+                      <SelectValue placeholder="Select language" />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    {languages.map((lang) => (
+                      <SelectItem key={lang.value} value={lang.value}>
+                        {lang.label}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+            </FormItem>
+
             <Button type="submit" disabled={isLoading} className="w-full sm:w-auto text-base py-3 px-6">
               {isLoading ? (
                 <>
