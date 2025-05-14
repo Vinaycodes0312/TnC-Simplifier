@@ -1,11 +1,11 @@
 // src/locales/mr.ts
 export default {
   app: {
-    title: 'T&C Simplifier (MR) - अटी आणि नियम सोपे करा',
+    title: 'T&C Simplifier - अटी आणि नियम सोपे करा',
     description: 'गुंतागुंतीच्या अटी आणि नियम समजण्यास सोप्या बुलेट पॉइंट्समध्ये सोपे करा.',
   },
   home: {
-    title: 'T&C Simplifier (MR)',
+    title: 'T&C Simplifier',
     subtitle: 'गुंतागुंतीच्या कायदेशीर शब्दावलीला कंटाळला आहात? अटी आणि नियम स्पष्ट, संक्षिप्त बुलेट पॉइंट्समध्ये सोपे करण्यासाठी URL पेस्ट करा.',
     error: {
       title: 'सुलभीकरण त्रुटी',

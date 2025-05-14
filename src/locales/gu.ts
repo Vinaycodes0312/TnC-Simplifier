@@ -1,11 +1,11 @@
 // src/locales/gu.ts
 export default {
   app: {
-    title: 'T&C Simplifier (GU) - નિયમો અને શરતો સરળ બનાવો',
+    title: 'T&C Simplifier - નિયમો અને શરતો સરળ બનાવો',
     description: 'જટિલ નિયમો અને શરતોને સમજવામાં સરળ બુલેટ પોઇન્ટમાં સરળ બનાવો.',
   },
   home: {
-    title: 'T&C Simplifier (GU)',
+    title: 'T&C Simplifier',
     subtitle: 'જટિલ કાનૂની શબ્દભંડોળથી કંટાળી ગયા છો? નિયમો અને શરતોને સ્પષ્ટ, સંક્ષિપ્ત બુલેટ પોઇન્ટમાં સરળ બનાવવા માટે URL પેસ્ટ કરો.',
     error: {
       title: 'સરળીકરણ ભૂલ',
