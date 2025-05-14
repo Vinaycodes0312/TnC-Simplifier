@@ -18,12 +18,11 @@ export function LanguageSwitcher() {
   const currentLocale = useCurrentLocale();
   const t = useI18n();
 
-  // The old languageNames const is removed.
-  // We will directly use t() in the map function below.
-
   return (
     <div className="flex items-center gap-2 mt-4 sm:mt-0">
-      <Globe className="h-5 w-5 text-muted-foreground" />
+      <div className="p-0.5 border-2 border-[hsl(var(--muted-foreground))] rounded-full flex items-center justify-center">
+        <Globe className="h-5 w-5 text-muted-foreground" />
+      </div>
       <Select
         value={currentLocale}
         onValueChange={(newLocale) => {
