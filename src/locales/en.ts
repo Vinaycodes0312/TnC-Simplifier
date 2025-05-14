@@ -1,7 +1,7 @@
 // src/locales/en.ts
 export default {
   app: {
-    title: 'T&C Simplifier - Simplify Terms & Conditions',
+    title: 'T&C Simplifier',
     description: 'Simplify complex terms and conditions into easy-to-understand bullet points.',
   },
   home: {
@@ -14,6 +14,8 @@ export default {
     },
     shareCurrentSummary: 'Share Current Summary',
     footerText: '© {year} T&C Simplifier. Understand better, faster.',
+    helpAndSupport: 'Help & Support',
+    developerContact: 'Developer Contact',
   },
   urlInputForm: {
     title: 'Enter Terms & Conditions URL',
@@ -82,4 +84,25 @@ export default {
     pa: 'ਪੰਜਾਬੀ',
     or: 'ଓଡ଼ିଆ',
   },
+  helpDialog: {
+    title: "Help & Support",
+    q1Title: "How to use T&C Simplifier?",
+    q1Answer1: "1. Paste the URL of the terms and conditions page you want to simplify into the input field.",
+    q1Answer2: "2. Select your preferred language for the summary from the dropdown menu.",
+    q1Answer3: "3. Click the 'Simplify Terms' button.",
+    q1Answer4: "4. The simplified summary will appear below. You can then share it or find it later in your history.",
+    q2Title: "Is my data saved?",
+    q2Answer: "Your simplification history (URL, summary, timestamp) is saved locally in your browser's storage. It is not sent to any server. You can clear your history at any time.",
+    q3Title: "What if I get an error?",
+    q3Answer: "Ensure the URL is correct and publicly accessible. Some complex page structures or very long documents might occasionally cause issues. Try a different URL if problems persist.",
+  },
+  contactDialog: {
+    title: "Developer Contact",
+    intro: "For inquiries, feedback, or support, please reach out to:",
+    email: "developer@example.com",
+    note: "Please note: This is a demo application. The email address is a placeholder.",
+  },
+  dialog: {
+    close: "Close",
+  }
 } as const;
