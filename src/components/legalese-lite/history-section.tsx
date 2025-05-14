@@ -3,6 +3,7 @@
 
 import type { FC } from 'react';
 import type { HistoryEntry } from '@/types';
+import type { Locale } from '@/app/i18n/settings';
 import {
   Accordion,
   AccordionContent,
@@ -12,18 +13,23 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { History as HistoryIcon, Share2, Trash2 } from "lucide-react";
+import { useI18n } from '@/app/i18n/client';
 
 interface HistorySectionProps {
   history: HistoryEntry[];
   onShareItem: (item: HistoryEntry) => void;
   onDeleteItem: (id: string) => void;
   onClearAll: () => void;
+  currentLocale: Locale; // Pass current locale for date formatting
 }
 
-export const HistorySection: FC<HistorySectionProps> = ({ history, onShareItem, onDeleteItem, onClearAll }) => {
-  if (history.length === 0) {
-    return null; // Don't render anything if history is empty, or a small message
+export const HistorySection: FC<HistorySectionProps> = ({ history, onShareItem, onDeleteItem, onClearAll, currentLocale }) => {
+  const t = useI18n();
+
+  if (history.length === 0 && !t) { // Ensure t is loaded
+    return null; 
   }
+
 
   return (
     <Card className="mt-10 w-full max-w-2xl shadow-lg">
@@ -31,21 +37,21 @@ export const HistorySection: FC<HistorySectionProps> = ({ history, onShareItem, 
         <div className="flex justify-between items-center">
           <CardTitle className="flex items-center text-xl">
             <HistoryIcon className="mr-3 h-7 w-7 text-accent" />
-            Simplification History
+            {t('historySection.title')}
           </CardTitle>
           {history.length > 0 && (
              <Button variant="outline" size="sm" onClick={onClearAll}>
-              <Trash2 className="mr-2 h-4 w-4" /> Clear All
+              <Trash2 className="mr-2 h-4 w-4" /> {t('historySection.clearAll')}
             </Button>
           )}
         </div>
         <CardDescription>
-          Previously simplified terms and conditions.
+          {t('historySection.description')}
         </CardDescription>
       </CardHeader>
       <CardContent>
         {history.length === 0 ? (
-          <p className="text-muted-foreground">No history yet. Simplify some terms to see them here.</p>
+          <p className="text-muted-foreground">{t('historySection.empty')}</p>
         ) : (
           <Accordion type="single" collapsible className="w-full">
             {history.map((item) => (
@@ -54,7 +60,10 @@ export const HistorySection: FC<HistorySectionProps> = ({ history, onShareItem, 
                   <div className="flex flex-col items-start text-left">
                     <span className="font-medium truncate max-w-[calc(100%-4rem)]">{item.url}</span>
                     <span className="text-xs text-muted-foreground">
-                      {new Date(item.timestamp).toLocaleString()}
+                      {new Date(item.timestamp).toLocaleString(currentLocale, {
+                        year: 'numeric', month: 'short', day: 'numeric',
+                        hour: '2-digit', minute: '2-digit'
+                      })}
                     </span>
                   </div>
                 </AccordionTrigger>
@@ -68,10 +77,10 @@ export const HistorySection: FC<HistorySectionProps> = ({ history, onShareItem, 
                   </div>
                   <div className="flex space-x-2 justify-end">
                     <Button variant="ghost" size="sm" onClick={() => onShareItem(item)}>
-                      <Share2 className="mr-2 h-4 w-4" /> Share
+                      <Share2 className="mr-2 h-4 w-4" /> {t('historySection.share')}
                     </Button>
                     <Button variant="ghost" size="sm" onClick={() => onDeleteItem(item.id)} className="text-destructive hover:text-destructive">
-                      <Trash2 className="mr-2 h-4 w-4" /> Delete
+                      <Trash2 className="mr-2 h-4 w-4" /> {t('historySection.delete')}
                     </Button>
                   </div>
                 </AccordionContent>

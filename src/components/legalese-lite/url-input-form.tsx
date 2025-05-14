@@ -26,7 +26,9 @@ import {
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link as LinkIcon, Wand2, Loader2, Languages } from "lucide-react";
 import { ScrollArea } from '@/components/ui/scroll-area';
+import { useI18n } from '@/app/i18n/client';
 
+// Zod schema messages are not internationalized in this iteration
 const urlSchema = z.object({
   url: z.string().url({ message: "Please enter a valid URL." }),
 });
@@ -38,6 +40,7 @@ interface UrlInputFormProps {
   isLoading: boolean;
 }
 
+// Language list for summary generation remains as is
 const languages = [
   { value: "Afrikaans", label: "Afrikaans" },
   { value: "Albanian", label: "Albanian (Shqip)" },
@@ -134,6 +137,7 @@ const languages = [
 
 
 export const UrlInputForm: FC<UrlInputFormProps> = ({ onSimplify, isLoading }) => {
+  const t = useI18n();
   const [selectedLanguage, setSelectedLanguage] = useState<string>(languages.find(l => l.value === "English")?.value || languages[0].value);
 
   const form = useForm<UrlFormData>({
@@ -150,9 +154,9 @@ export const UrlInputForm: FC<UrlInputFormProps> = ({ onSimplify, isLoading }) =
   return (
     <Card className="w-full max-w-2xl shadow-xl">
       <CardHeader>
-        <CardTitle className="text-2xl">Enter Terms & Conditions URL</CardTitle>
+        <CardTitle className="text-2xl">{t('urlInputForm.title')}</CardTitle>
         <CardDescription>
-          Paste the URL of a terms and conditions page and choose your preferred language for the summary.
+          {t('urlInputForm.description')}
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -163,14 +167,14 @@ export const UrlInputForm: FC<UrlInputFormProps> = ({ onSimplify, isLoading }) =
               name="url"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel htmlFor="url-input">URL</FormLabel>
+                  <FormLabel htmlFor="url-input">{t('urlInputForm.urlLabel')}</FormLabel>
                   <div className="relative">
                     <LinkIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
                     <FormControl>
                       <Input
                         id="url-input"
                         type="url"
-                        placeholder="https://example.com/terms"
+                        placeholder={t('urlInputForm.urlPlaceholder')}
                         className="pl-10 text-base"
                         {...field}
                       />
@@ -182,17 +186,17 @@ export const UrlInputForm: FC<UrlInputFormProps> = ({ onSimplify, isLoading }) =
             />
 
             <FormItem>
-              <FormLabel htmlFor="language-select">Summary Language</FormLabel>
+              <FormLabel htmlFor="language-select">{t('urlInputForm.languageLabel')}</FormLabel>
               <div className="relative">
                 <Languages className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground z-10" />
                 <Select value={selectedLanguage} onValueChange={setSelectedLanguage}>
                   <FormControl>
                     <SelectTrigger id="language-select" className="pl-10 text-base">
-                      <SelectValue placeholder="Select language" />
+                      <SelectValue placeholder={t('urlInputForm.languagePlaceholder')} />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
-                    <ScrollArea className="h-[200px]"> {/* Adjust height as needed */}
+                    <ScrollArea className="h-[200px]">
                       {languages.map((lang) => (
                         <SelectItem key={lang.value} value={lang.value}>
                           {lang.label}
@@ -208,12 +212,12 @@ export const UrlInputForm: FC<UrlInputFormProps> = ({ onSimplify, isLoading }) =
               {isLoading ? (
                 <>
                   <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                  Simplifying...
+                  {t('urlInputForm.buttonLoading')}
                 </>
               ) : (
                 <>
                   <Wand2 className="mr-2 h-5 w-5" />
-                  Simplify Terms
+                  {t('urlInputForm.buttonSimplify')}
                 </>
               )}
             </Button>
