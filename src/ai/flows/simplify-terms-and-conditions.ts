@@ -40,8 +40,7 @@ const prompt = ai.definePrompt({
   name: 'simplifyTermsAndConditionsPrompt',
   input: {schema: SimplifyTermsAndConditionsInputSchema},
   output: {schema: SimplifyTermsAndConditionsOutputSchema},
-  model: 'googleai/gemini-pro', // Model is now a top-level property
-  // config object can be used for other generation parameters like temperature if needed
+  // Model will be picked from the default configured in the googleAI plugin (src/ai/genkit.ts)
   prompt: `You are an expert legal summarizer. You will be provided with the URL for a terms and conditions page. Your job is to extract the salient points and summarize them in a bullet-point format that is easy to understand, in {{language}}. Be sure to include important legal stipulations and user obligations.
 
 URL: {{{url}}}
@@ -55,7 +54,6 @@ const simplifyTermsAndConditionsFlow = ai.defineFlow(
     outputSchema: SimplifyTermsAndConditionsOutputSchema,
   },
   async input => {
-    // Removed the explicit model override from the prompt call
     const result = await prompt(input); 
     if (result.output === undefined) {
       console.error('AI prompt failed to return an output. Full result:', JSON.stringify(result, null, 2));
