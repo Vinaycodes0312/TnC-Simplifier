@@ -109,9 +109,10 @@ const simplifyTermsAndConditionsFlow = ai.defineFlow(
         }
       }
       
-      const simplifiedErrorForClient = "AI_FLOW_ERROR";
-      console.error(`Re-throwing error from flow. Original error name: ${errorName}, message: ${detailedErrorMessage}. Simplified client error: ${simplifiedErrorForClient}`);
-      throw new Error(simplifiedErrorForClient);
+      // Construct a more specific error message for the client, but keep it a standard Error object.
+      const clientErrorMessage = `AI Service Error: ${errorName}. Details: ${detailedErrorMessage.substring(0, 150)}`; // Truncate for safety
+      console.error(`Re-throwing error from flow. Original error name: ${errorName}, message: ${detailedErrorMessage}. Client error to be thrown: ${clientErrorMessage}`);
+      throw new Error(clientErrorMessage);
     }
   }
 );
