@@ -5,7 +5,6 @@
 /node_modules
 /.pnp
 .pnp.js
-.yarn/install-state.gz
 
 # Testing
 /coverage
@@ -20,9 +19,8 @@
 # Misc
 .DS_Store
 *.pem
-*.log
 
-# Local .env file
+# Local Environment Variables
 .env
 .env*.local
 .env.development.local
@@ -33,7 +31,6 @@
 .turbo
 
 # IDE
-.idea/
 .vscode/
 *.swp
-*.swo
+*~

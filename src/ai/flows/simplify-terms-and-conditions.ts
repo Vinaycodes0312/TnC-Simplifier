@@ -109,10 +109,11 @@ const simplifyTermsAndConditionsFlow = ai.defineFlow(
         }
       }
       
-      // Construct a more specific error message for the client, but keep it a standard Error object.
-      const clientErrorMessage = `AI Service Error: ${errorName}. Details: ${detailedErrorMessage.substring(0, 150)}`; // Truncate for safety
+      // Simplify the client-facing error message
+      const clientErrorMessage = `AI Service Error: ${errorName}. Please check server logs for more details.`;
       console.error(`Re-throwing error from flow. Original error name: ${errorName}, message: ${detailedErrorMessage}. Client error to be thrown: ${clientErrorMessage}`);
       throw new Error(clientErrorMessage);
     }
   }
 );
+
