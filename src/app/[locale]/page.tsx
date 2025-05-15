@@ -1,3 +1,4 @@
+
 // src/app/[locale]/page.tsx
 "use client";
 
@@ -72,6 +73,7 @@ export default function HomePage() {
   };
 
   const handleSimplify = async (url: string, language: string) => {
+    console.log("HomePage: handleSimplify called with URL:", url, "Language:", language);
     setIsLoading(true);
     setSummary(null);
     setError(null);
@@ -94,7 +96,8 @@ export default function HomePage() {
         setError(t('home.error.aiNoSummary'));
       }
     } catch (e: any) {
-      console.error("Simplification error:", e);
+      console.error("HomePage: Simplification error caught in handleSimplify:", e);
+      console.error("HomePage: Error message to be set:", e.message || t('home.error.unexpected'));
       setError(e.message || t('home.error.unexpected'));
     } finally {
       setIsLoading(false);
@@ -126,7 +129,8 @@ export default function HomePage() {
           console.log('Share operation was cancelled by the user.');
         } else {
           console.error('Error sharing:', err);
-          toast({ variant: "destructive", title: t('toast.shareError.title'), description: t('toast.shareError.description')});
+          // No toast for actual errors here, as a destructive toast is not suitable for this.
+          // The console error is sufficient for debugging.
         }
       }
     } else {
@@ -135,7 +139,7 @@ export default function HomePage() {
         toast({ title: t('toast.copiedToClipboard.title'), description: t('toast.copiedToClipboard.description') });
       } catch (err) {
         console.error('Failed to copy to clipboard: ', err);
-        toast({ variant: "destructive", title: t('toast.copyError.title'), description: t('toast.copyError.description')});
+        // No toast for actual errors here
       }
     }
   };
@@ -263,3 +267,4 @@ export default function HomePage() {
     </main>
   );
 }
+
