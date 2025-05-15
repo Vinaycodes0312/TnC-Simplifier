@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { I18nProviderClient } from '@/app/i18n/client';
 import { getStaticLocaleParams, getI18n } from '@/app/i18n/server';
 import type { Locale } from '@/app/i18n/settings';
+import { setStaticParamsLocale } from 'next-international/server';
 // Ensure Geist fonts are imported if used, or manage fonts globally in src/app/layout.tsx
 // import { Geist, Geist_Mono } from 'next/font/google';
 import '../globals.css'; // Ensure path is correct if globals.css is in src/app
@@ -37,6 +38,9 @@ export default function LocaleLayout({
   children: React.ReactNode;
   params: { locale: Locale };
 }>) {
+  // Set the static params locale for pre-rendering
+  setStaticParamsLocale(locale);
+
   return (
     <I18nProviderClient locale={locale}>
       {/* HTML and Body tags are in the root src/app/layout.tsx */}

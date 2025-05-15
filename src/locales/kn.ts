@@ -99,8 +99,7 @@ export default {
   contactDialog: {
     title: "ಅಭಿವೃದ್ಧಿಕಾರರ ಸಂಪರ್ಕ",
     intro: "ವಿಚಾರಣೆಗಳು, ಪ್ರತಿಕ್ರಿಯೆ ಅಥವಾ ಬೆಂಬಲಕ್ಕಾಗಿ, ದಯವಿಟ್ಟು ಸಂಪರ್ಕಿಸಿ:",
-    email: "developer@example.com", // Placeholder
-    note: "ದಯವಿಟ್ಟು ಗಮನಿಸಿ: ಇದು ಡೆಮೊ ಅಪ್ಲಿಕೇಶನ್ ಆಗಿದೆ. ಇಮೇಲ್ ವಿಳಾಸವು ಪ್ಲೇಸ್ಹೋಲ್ಡರ್ ಆಗಿದೆ.",
+    email: "vinay.sharma03d@gmail.com", // Placeholder
   },
   dialog: {
     close: "ಮುಚ್ಚಿ",

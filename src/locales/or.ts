@@ -99,8 +99,7 @@ export default {
   contactDialog: {
     title: "ବିକାଶକାରୀ ସମ୍ପର୍କ",
     intro: "ଅନୁସନ୍ଧାନ, ମତାମତ କିମ୍ବା ସମର୍ଥନ ପାଇଁ, ଦୟାକରି ସମ୍ପର୍କ କରନ୍ତୁ:",
-    email: "developer@example.com", // Placeholder
-    note: "ଦୟାକରି ଧ୍ୟାନ ଦିଅନ୍ତୁ: ଏହା ଏକ ଡେମୋ ଆପ୍ଲିକେସନ୍ | ଇମେଲ୍ ଠିକଣା ଏକ ପ୍ଲେସହୋଲ୍ଡର୍ ଅଟେ |",
+    email: "vinay.sharma03d@gmail.com", // Placeholder
   },
   dialog: {
     close: "ବନ୍ଦ କରନ୍ତୁ",

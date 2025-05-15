@@ -99,8 +99,7 @@ export default {
   contactDialog: {
     title: "ਡਿਵੈਲਪਰ ਸੰਪਰਕ",
     intro: "ਪੁੱਛਗਿੱਛ, ਫੀਡਬੈਕ ਜਾਂ ਸਹਾਇਤਾ ਲਈ, ਕਿਰਪਾ ਕਰਕੇ ਸੰਪਰਕ ਕਰੋ:",
-    email: "developer@example.com", // Placeholder
-    note: "ਕਿਰਪਾ ਕਰਕੇ ਧਿਆਨ ਦਿਓ: ਇਹ ਇੱਕ ਡੈਮੋ ਐਪਲੀਕੇਸ਼ਨ ਹੈ। ਈਮੇਲ ਪਤਾ ਇੱਕ ਪਲੇਸਹੋਲਡਰ ਹੈ।",
+    email: "vinay.sharma03d@gmail.com", // Placeholder
   },
   dialog: {
     close: "ਬੰਦ ਕਰੋ",

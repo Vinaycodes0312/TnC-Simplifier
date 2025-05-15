@@ -99,8 +99,7 @@ export default {
   contactDialog: {
     title: "ഡെവലപ്പർ കോൺടാക്റ്റ്",
     intro: "അന്വേഷണങ്ങൾക്കോ, ഫീഡ്‌ബാക്കിനോ, പിന്തുണയ്‌ക്കോ ദയവായി ബന്ധപ്പെടുക:",
-    email: "developer@example.com", // Placeholder
-    note: "ദയവായി ശ്രദ്ധിക്കുക: ഇതൊരു ഡെമോ ആപ്ലിക്കേഷനാണ്. ഇമെയിൽ വിലാസം ഒരു പ്ലെയ്‌സ്‌ഹോൾഡറാണ്.",
+    email: "vinay.sharma03d@gmail.com", // Placeholder
   },
   dialog: {
     close: "അടയ്ക്കുക",
