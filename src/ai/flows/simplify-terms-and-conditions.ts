@@ -77,17 +77,29 @@ const simplifyTermsAndConditionsFlow = ai.defineFlow(
       console.error('Raw error object caught in flow:', e);
       
       let detailedErrorMessage = "Unknown AI service error.";
+      let errorName = "UnknownError";
+
       if (e instanceof Error) {
+        errorName = e.name;
+        detailedErrorMessage = e.message;
         console.error('Error name:', e.name);
         console.error('Error message:', e.message);
-        console.error('Error stack:', e.stack);
-        detailedErrorMessage = e.message;
+        if (typeof e.stack === 'string') {
+          console.error('Error stack:', e.stack);
+        } else {
+          console.error('Error stack: Not available or not a string.');
+        }
       } else if (typeof e === 'string') {
         detailedErrorMessage = e;
       } else if (typeof e === 'object' && e !== null && typeof (e as { message?: unknown }).message === 'string') {
         detailedErrorMessage = (e as { message: string }).message;
+         if (typeof (e as { name?: unknown }).name === 'string') {
+            errorName = (e as { name: string }).name;
+        }
          if (typeof (e as { stack?: unknown }).stack === 'string') {
             console.error('Error stack (from object):', (e as { stack: string }).stack);
+        } else {
+          console.error('Error stack (from object): Not available or not a string.');
         }
       } else {
         try {
@@ -96,27 +108,10 @@ const simplifyTermsAndConditionsFlow = ai.defineFlow(
           detailedErrorMessage = "Could not stringify error object.";
         }
       }
-
-      let userFriendlyMessage = 'An AI service error occurred. Please check server logs for more details.';
       
-      if (detailedErrorMessage.includes('API key not valid') || detailedErrorMessage.includes('API_KEY_INVALID') || detailedErrorMessage.includes('permission_denied') || detailedErrorMessage.includes('PERMISSION_DENIED')) {
-        userFriendlyMessage = 'AI Service Error: The API key is not valid or has insufficient permissions. Please verify your GOOGLE_API_KEY configuration and ensure the Generative Language API is enabled in your Google Cloud project.';
-      } else if (detailedErrorMessage.toLowerCase().includes('quota')) {
-          userFriendlyMessage = 'AI Service Error: API quota exceeded. Please check your usage limits.';
-      } else if (detailedErrorMessage.toLowerCase().includes('timed out') || detailedErrorMessage.toLowerCase().includes('timeout')) {
-          userFriendlyMessage = 'AI Service Error: The request to the AI service timed out.';
-      } else if (detailedErrorMessage.includes('Must supply a `model`')) {
-          userFriendlyMessage = 'AI Configuration Error: Model not correctly specified for the AI call.';
-      } else if (detailedErrorMessage.includes('models/gemini-1.5-flash-latest is not found') || detailedErrorMessage.includes('not found for API version')) {
-          userFriendlyMessage = 'AI Service Error: The specified model (gemini-1.5-flash-latest) was not found or is not supported. Check model availability or Genkit plugin configuration.';
-      } else if (detailedErrorMessage.includes('Invalid JSON payload')) {
-          userFriendlyMessage = 'AI Service Error: Invalid request sent to the AI model. Please check server logs for details.';
-      } else {
-          userFriendlyMessage = `AI Service Error: ${String(detailedErrorMessage).split('\n')[0].substring(0, 100)}. Check server logs for full details.`;
-      }
-      
-      console.error('Re-throwing error from flow with user-friendly message:', userFriendlyMessage);
-      throw new Error(userFriendlyMessage);
+      const simplifiedErrorForClient = "AI_FLOW_ERROR";
+      console.error(`Re-throwing error from flow. Original error name: ${errorName}, message: ${detailedErrorMessage}. Simplified client error: ${simplifiedErrorForClient}`);
+      throw new Error(simplifiedErrorForClient);
     }
   }
 );
