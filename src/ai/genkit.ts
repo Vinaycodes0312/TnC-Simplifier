@@ -2,5 +2,7 @@ import {genkit} from 'genkit';
 import {googleAI} from '@genkit-ai/googleai';
 
 export const ai = genkit({
-  plugins: [googleAI()],
+  plugins: [
+    googleAI({ model: 'gemini-pro' }) // Set 'gemini-pro' as a default model for the plugin
+  ],
 });
