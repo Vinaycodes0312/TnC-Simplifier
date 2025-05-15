@@ -37,7 +37,7 @@ export async function simplifyTermsAndConditions(
 
 const simplifyTermsPrompt = ai.definePrompt({
   name: 'simplifyTermsAndConditionsPrompt',
-  model: 'googleai/gemini-1.5-flash-latest', // Model defined here
+  model: 'googleai/gemini-1.5-flash-latest',
   input: {schema: SimplifyTermsAndConditionsInputSchema},
   output: {schema: SimplifyTermsAndConditionsOutputSchema},
   prompt: `You are an expert legal summarizer. You will be provided with the URL for a terms and conditions page. Your job is to extract the salient points and summarize them in a bullet-point format that is easy to understand, in {{language}}. Be sure to include important legal stipulations and user obligations.
@@ -53,14 +53,46 @@ const simplifyTermsAndConditionsFlow = ai.defineFlow(
     outputSchema: SimplifyTermsAndConditionsOutputSchema,
   },
   async (input: SimplifyTermsAndConditionsInput) => {
-    // Rely on the model defined in simplifyTermsPrompt
-    const {output} = await simplifyTermsPrompt(input);
-    
-    if (output === undefined) {
-      console.error('AI prompt call failed to return a structured output. Input was:', JSON.stringify(input, null, 2));
-      throw new Error('The AI model did not produce a summary. This could be due to content restrictions, an issue with the provided URL, or a temporary model problem.');
+    console.log(`Entering simplifyTermsAndConditionsFlow with input: ${JSON.stringify(input)}`);
+    let output;
+    try {
+      const response = await simplifyTermsPrompt(input);
+      output = response.output;
+
+      if (output === undefined) {
+        console.error(
+          'AI prompt call returned undefined output. Input was:',
+          JSON.stringify(input, null, 2),
+          'Full response object:', JSON.stringify(response, null, 2)
+        );
+        throw new Error(
+          'The AI model did not produce a valid summary structure. Please check the input URL or try again.'
+        );
+      }
+      console.log(`AI prompt successfully returned output.`); // Output itself might be large, so just confirming success.
+      return output;
+    } catch (e: any) {
+      console.error('Error during AI prompt execution or processing:', e); 
+      
+      let errorMessage = 'An unexpected error occurred with the AI service.';
+      if (e instanceof Error && e.message) {
+        if (e.message.includes('API key not valid') || e.message.includes('API_KEY_INVALID')) {
+          errorMessage = 'AI Service Error: The API key is not valid. Please check your configuration.';
+        } else if (e.message.toLowerCase().includes('quota')) {
+            errorMessage = 'AI Service Error: API quota exceeded. Please check your usage limits.';
+        } else if (e.message.toLowerCase().includes('timed out') || e.message.toLowerCase().includes('timeout')) {
+            errorMessage = 'AI Service Error: The request to the AI service timed out.';
+        } else if (e.message.includes('Must supply a `model`')) {
+            errorMessage = 'AI Configuration Error: Model not correctly specified for the AI call.';
+        } else {
+            errorMessage = `AI Service Error: ${e.message.split('\n')[0]}`;
+        }
+      } else if (typeof e === 'string') {
+        errorMessage = `AI Service Error: ${e}`;
+      } else if (e && e.toString && typeof e.toString === 'function') {
+        errorMessage = `AI Service Error: ${e.toString().split('\n')[0]}`;
+      }
+      throw new Error(errorMessage);
     }
-    return output;
   }
 );
-
