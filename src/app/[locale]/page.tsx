@@ -105,14 +105,13 @@ export default function HomePage() {
     if (navigator.share) {
       try {
         await navigator.share({
-          title: t('home.title') + ` for ${shareUrl}`,
+          title: t('app.title') + ` for ${shareUrl}`, // Using app.title for better context
           text: `Simplified T&C for ${shareUrl}:\n\n${shareSummary}`,
           url: shareUrl,
         });
         toast({ title: t('toast.sharedSuccessfully.title') });
       } catch (err) {
         console.error('Error sharing:', err);
-        // setError(t('toast.shareError.description')); // Removed setError
         toast({ variant: "destructive", title: t('toast.shareError.title'), description: t('toast.shareError.description')});
       }
     } else {
@@ -121,7 +120,6 @@ export default function HomePage() {
         toast({ title: t('toast.copiedToClipboard.title'), description: t('toast.copiedToClipboard.description') });
       } catch (err) {
         console.error('Failed to copy to clipboard: ', err);
-        // setError(t('toast.copyError.description')); // Removed setError
         toast({ variant: "destructive", title: t('toast.copyError.title'), description: t('toast.copyError.description')});
       }
     }
@@ -142,7 +140,11 @@ export default function HomePage() {
 
   return (
     <main className="flex flex-col items-center justify-start min-h-screen bg-background text-foreground p-4 sm:p-8 pt-12 sm:pt-20">
-      <div className="w-full max-w-2xl h-16 sm:h-18 bg-primary mb-8"></div>
+      <div className="w-full max-w-2xl h-16 sm:h-18 bg-primary mb-8 relative overflow-hidden">
+        {isLoading && (
+          <div className="absolute top-0 left-0 h-full w-1/4 bg-primary-foreground/30 animate-shimmer-slide"></div>
+        )}
+      </div>
 
       <div className="text-center mb-10 sm:mb-12">
         <div className="inline-flex items-center justify-center p-3 bg-primary/10 rounded-full mb-4">
