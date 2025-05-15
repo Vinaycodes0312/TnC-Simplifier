@@ -106,7 +106,7 @@ export default function HomePage() {
       toast({
         variant: "destructive",
         title: t('toast.shareError.title'),
-        description: "Summary or URL is missing.", // This message would ideally be internationalized too.
+        description: "Summary or URL is missing.", 
       });
       return;
     }
@@ -124,7 +124,6 @@ export default function HomePage() {
       } catch (err: any) {
         if (err.name === 'AbortError') {
           console.log('Share operation was cancelled by the user.');
-          // No destructive toast for user cancellation
         } else {
           console.error('Error sharing:', err);
           toast({ variant: "destructive", title: t('toast.shareError.title'), description: t('toast.shareError.description')});
@@ -158,7 +157,7 @@ export default function HomePage() {
     <main className="flex flex-col items-center justify-start min-h-screen bg-background text-foreground p-4 sm:p-8 pt-12 sm:pt-20">
       <div className="w-full max-w-2xl h-16 sm:h-18 bg-primary mb-8 relative overflow-hidden">
         {isLoading && (
-          <div className="absolute top-0 left-0 h-full w-1/4 bg-primary-foreground/30 animate-shimmer-slide"></div>
+          <div className="absolute top-0 left-0 h-full w-1/2 bg-primary-foreground/30 animate-shimmer-slide"></div>
         )}
       </div>
 
