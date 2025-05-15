@@ -84,14 +84,15 @@ export default {
   				}
   			},
         'shimmer-slide': {
-          '0%': { transform: 'translateX(-100%)' },
-          '100%': { transform: 'translateX(100%)' },
+          '0%': { transform: 'translateX(-100%)', opacity: '0.5' },
+          '50%': { opacity: '1' },
+          '100%': { transform: 'translateX(100%)', opacity: '0.5' },
         }
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out',
-        'shimmer-slide': 'shimmer-slide 1.5s infinite linear',
+        'shimmer-slide': 'shimmer-slide 2.5s infinite linear',
   		}
   	}
   },
