@@ -37,9 +37,11 @@ export async function simplifyTermsAndConditions(
 
 const prompt = ai.definePrompt({
   name: 'simplifyTermsAndConditionsPrompt',
-  model: 'googleai/gemini-2.0-flash', // Explicitly set model
   input: {schema: SimplifyTermsAndConditionsInputSchema},
   output: {schema: SimplifyTermsAndConditionsOutputSchema},
+  config: { 
+    model: 'googleai/gemini-pro', // Changed to gemini-pro for potentially more stable text generation
+  },
   prompt: `You are an expert legal summarizer. You will be provided with the URL for a terms and conditions page. Your job is to extract the salient points and summarize them in a bullet-point format that is easy to understand, in {{language}}. Be sure to include important legal stipulations and user obligations.
 
 URL: {{{url}}}
@@ -53,7 +55,13 @@ const simplifyTermsAndConditionsFlow = ai.defineFlow(
     outputSchema: SimplifyTermsAndConditionsOutputSchema,
   },
   async input => {
-    const {output} = await prompt(input);
-    return output!;
+    const result = await prompt(input);
+    if (result.output === undefined) {
+      console.error('AI prompt failed to return an output. Full result:', JSON.stringify(result, null, 2));
+      // Ensure the error message is somewhat user-friendly if it bubbles up,
+      // or matches expectations if handled specifically by the caller.
+      throw new Error('The AI model did not produce a summary. This could be due to content restrictions, an issue with the provided URL, or a temporary model problem.');
+    }
+    return result.output;
   }
 );
