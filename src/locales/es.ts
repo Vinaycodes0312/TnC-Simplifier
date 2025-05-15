@@ -99,8 +99,7 @@ export default {
   contactDialog: {
     title: "Contacto del Desarrollador",
     intro: "Para consultas, comentarios o soporte, por favor contacta a:",
-    email: "developer@example.com", // Placeholder, translate if needed or keep as is.
-    note: "Por favor, ten en cuenta: Esta es una aplicación de demostración. La dirección de correo electrónico es un marcador de posición.",
+    email: "vinay.sharma03d@gmail.com", // Placeholder, translate if needed or keep as is.
   },
   dialog: {
     close: "Cerrar",

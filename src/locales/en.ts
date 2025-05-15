@@ -99,8 +99,7 @@ export default {
   contactDialog: {
     title: "Developer Contact",
     intro: "For inquiries, feedback, or support, please reach out to:",
-    email: "developer@example.com",
-    note: "Please note: This is a demo application. The email address is a placeholder.",
+    email: "vinay.sharma03d@gmail.com",
   },
   dialog: {
     close: "Close",
