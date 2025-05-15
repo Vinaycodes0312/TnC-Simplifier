@@ -102,17 +102,31 @@ export default function HomePage() {
   };
 
   const handleShare = async (shareSummary: string, shareUrl: string) => {
+    if (!shareSummary || !shareUrl) {
+      toast({
+        variant: "destructive",
+        title: t('toast.shareError.title'),
+        description: "Summary or URL is missing.", // This message would ideally be internationalized too.
+      });
+      return;
+    }
+
     if (navigator.share) {
       try {
         await navigator.share({
-          title: t('app.title') + ` for ${shareUrl}`, // Using app.title for better context
+          title: t('app.title') + ` for ${shareUrl}`, 
           text: `Simplified T&C for ${shareUrl}:\n\n${shareSummary}`,
           url: shareUrl,
         });
         toast({ title: t('toast.sharedSuccessfully.title') });
-      } catch (err) {
-        console.error('Error sharing:', err);
-        toast({ variant: "destructive", title: t('toast.shareError.title'), description: t('toast.shareError.description')});
+      } catch (err: any) {
+        if (err.name === 'AbortError') {
+          console.log('Share operation was cancelled by the user.');
+          // No destructive toast for user cancellation
+        } else {
+          console.error('Error sharing:', err);
+          toast({ variant: "destructive", title: t('toast.shareError.title'), description: t('toast.shareError.description')});
+        }
       }
     } else {
       try {
@@ -234,7 +248,7 @@ export default function HomePage() {
               <div className="py-4 space-y-2 text-sm">
                 <p className="text-muted-foreground">{t('contactDialog.intro')}</p>
                 <p className="font-medium">{t('contactDialog.email')}</p>
-                <p className="text-xs text-muted-foreground italic">{t('contactDialog.note')}</p>
+                <p className="text-xs text-muted-foreground italic">{t('contactDialog.note')}</p> {/* Added this key back for the dialog */}
               </div>
               <DialogFooter>
                  <DialogClose asChild>
