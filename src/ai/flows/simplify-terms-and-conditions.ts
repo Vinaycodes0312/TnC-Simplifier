@@ -37,7 +37,7 @@ export async function simplifyTermsAndConditions(
 
 const simplifyTermsPrompt = ai.definePrompt({
   name: 'simplifyTermsAndConditionsPrompt',
-  model: 'googleai/gemini-1.5-flash-latest',
+  model: 'googleai/gemini-1.5-flash-latest', // Ensure model is specified here
   input: {schema: SimplifyTermsAndConditionsInputSchema},
   output: {schema: SimplifyTermsAndConditionsOutputSchema},
   prompt: `You are an expert legal summarizer. You will be provided with the URL for a terms and conditions page. Your job is to extract the salient points and summarize them in a bullet-point format that is easy to understand, in {{language}}. Be sure to include important legal stipulations and user obligations.
@@ -72,27 +72,36 @@ const simplifyTermsAndConditionsFlow = ai.defineFlow(
       console.log(`AI prompt successfully returned output.`); // Output itself might be large, so just confirming success.
       return output;
     } catch (e: any) {
-      console.error('Error during AI prompt execution or processing:', e); 
-      
-      let errorMessage = 'An unexpected error occurred with the AI service.';
+      console.error('--- ERROR IN simplifyTermsAndConditionsFlow ---');
+      console.error('Raw error object caught in flow:', e);
+      if (e instanceof Error) {
+        console.error('Error name:', e.name);
+        console.error('Error message:', e.message);
+        console.error('Error stack:', e.stack);
+      } else {
+        console.error('The caught object is not an instance of Error.');
+      }
+
+      let simpleErrorMessage = 'An AI service error occurred. Please check server logs for more details.';
       if (e instanceof Error && e.message) {
         if (e.message.includes('API key not valid') || e.message.includes('API_KEY_INVALID')) {
-          errorMessage = 'AI Service Error: The API key is not valid. Please check your configuration.';
+          simpleErrorMessage = 'AI Service Error: The API key is not valid. Please verify your GOOGLE_API_KEY configuration.';
         } else if (e.message.toLowerCase().includes('quota')) {
-            errorMessage = 'AI Service Error: API quota exceeded. Please check your usage limits.';
+            simpleErrorMessage = 'AI Service Error: API quota exceeded. Please check your usage limits.';
         } else if (e.message.toLowerCase().includes('timed out') || e.message.toLowerCase().includes('timeout')) {
-            errorMessage = 'AI Service Error: The request to the AI service timed out.';
+            simpleErrorMessage = 'AI Service Error: The request to the AI service timed out.';
         } else if (e.message.includes('Must supply a `model`')) {
-            errorMessage = 'AI Configuration Error: Model not correctly specified for the AI call.';
+            simpleErrorMessage = 'AI Configuration Error: Model not correctly specified for the AI call.';
         } else {
-            errorMessage = `AI Service Error: ${e.message.split('\n')[0]}`;
+            // Use the first line of the error message if it's available
+            simpleErrorMessage = `AI Service Error: ${e.message.split('\n')[0]}`;
         }
       } else if (typeof e === 'string') {
-        errorMessage = `AI Service Error: ${e}`;
-      } else if (e && e.toString && typeof e.toString === 'function') {
-        errorMessage = `AI Service Error: ${e.toString().split('\n')[0]}`;
+        simpleErrorMessage = `AI Service Error: ${e.split('\n')[0]}`;
       }
-      throw new Error(errorMessage);
+      
+      console.error('Re-throwing error from flow with message:', simpleErrorMessage);
+      throw new Error(simpleErrorMessage);
     }
   }
 );
