@@ -13,6 +13,7 @@ export default {
       unexpected: 'ನಿಯಮಗಳು ಮತ್ತು ಷರತ್ತುಗಳನ್ನು ಸರಳಗೊಳಿಸುವಾಗ ಅನಿರೀಕ್ಷಿತ ದೋಷ ಸಂಭವಿಸಿದೆ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.',
     },
     shareCurrentSummary: 'ಪ್ರಸ್ತುತ ಸಾರಾಂಶವನ್ನು ಹಂಚಿಕೊಳ್ಳಿ',
+    shareTextPrefix: "{url} ಗಾಗಿ T&C ಯ ಸರಳೀಕೃತ ಸಾರಾಂಶ ಇಲ್ಲಿದೆ, {appName} ನಿಂದ ರಚಿಸಲಾಗಿದೆ:",
     footerText: '© {year} T&C Simplifier. ಉತ್ತಮವಾಗಿ, ವೇಗವಾಗಿ ಅರ್ಥಮಾಡಿಕೊಳ್ಳಿ.',
     helpAndSupport: 'ಸಹಾಯ ಮತ್ತು ಬೆಂಬಲ',
     developerContact: 'ಅಭಿವೃದ್ಧಿಕಾರರ ಸಂಪರ್ಕ',
@@ -99,7 +100,8 @@ export default {
   contactDialog: {
     title: "ಅಭಿವೃದ್ಧಿಕಾರರ ಸಂಪರ್ಕ",
     intro: "ವಿಚಾರಣೆಗಳು, ಪ್ರತಿಕ್ರಿಯೆ ಅಥವಾ ಬೆಂಬಲಕ್ಕಾಗಿ, ದಯವಿಟ್ಟು ಸಂಪರ್ಕಿಸಿ:",
-    email: "vinay.sharma03d@gmail.com", // Placeholder
+    email: "vinay.sharma03d@gmail.com", 
+    note: "ದಯವಿಟ್ಟು ಗಮನಿಸಿ: ಇದು ಒಂದು ಡೆಮೊ ಅಪ್ಲಿಕೇಶನ್ ಆಗಿದೆ.",
   },
   dialog: {
     close: "ಮುಚ್ಚಿ",

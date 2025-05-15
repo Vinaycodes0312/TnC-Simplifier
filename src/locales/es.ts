@@ -13,6 +13,7 @@ export default {
       unexpected: 'Ocurrió un error inesperado al simplificar los términos y condiciones. Por favor, inténtalo de nuevo.',
     },
     shareCurrentSummary: 'Compartir Resumen Actual',
+    shareTextPrefix: "Aquí tienes un resumen simplificado de los T&C para {url}, generado por {appName}:",
     footerText: '© {year} T&C Simplifier. Entiende mejor, más rápido.',
     helpAndSupport: 'Ayuda y Soporte',
     developerContact: 'Contacto del Desarrollador',
@@ -99,7 +100,8 @@ export default {
   contactDialog: {
     title: "Contacto del Desarrollador",
     intro: "Para consultas, comentarios o soporte, por favor contacta a:",
-    email: "vinay.sharma03d@gmail.com", // Placeholder, translate if needed or keep as is.
+    email: "vinay.sharma03d@gmail.com", 
+    note: "Por favor, ten en cuenta: Esta es una aplicación de demostración.",
   },
   dialog: {
     close: "Cerrar",

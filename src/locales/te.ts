@@ -13,6 +13,7 @@ export default {
       unexpected: 'నిబంధనలు మరియు షరతులను సరళీకరించేటప్పుడు ఊహించని లోపం సంభవించింది. దయచేసి మళ్లీ ప్రయత్నించండి.',
     },
     shareCurrentSummary: 'ప్రస్తుత సారాంశాన్ని పంచుకోండి',
+    shareTextPrefix: "{url} కోసం T&C యొక్క సరళీకృత సారాంశం ఇక్కడ ఉంది, {appName} ద్వారా రూపొందించబడింది:",
     footerText: '© {year} T&C Simplifier. బాగా, వేగంగా అర్థం చేసుకోండి.',
     helpAndSupport: 'సహాయం & మద్దతు',
     developerContact: 'డెవలపర్ సంప్రదింపు',
@@ -99,7 +100,8 @@ export default {
   contactDialog: {
     title: "డెవలపర్ సంప్రదింపు",
     intro: "విచారణలు, అభిప్రాయం లేదా మద్దతు కోసం, దయచేసి సంప్రదించండి:",
-    email: "vinay.sharma03d@gmail.com", // Placeholder
+    email: "vinay.sharma03d@gmail.com", 
+    note: "దయచేసి గమనించండి: ఇది ఒక డెమో అప్లికేషన్.",
   },
   dialog: {
     close: "మూసివేయి",

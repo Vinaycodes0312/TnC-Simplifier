@@ -111,11 +111,13 @@ export default function HomePage() {
       return;
     }
 
+    const shareText = t('home.shareTextPrefix', { url: shareUrl, appName: t('app.title') }) + `\n\n${shareSummary}`;
+
     if (navigator.share) {
       try {
         await navigator.share({
           title: t('app.title') + ` for ${shareUrl}`, 
-          text: `Simplified T&C for ${shareUrl}:\n\n${shareSummary}`,
+          text: shareText,
           url: shareUrl,
         });
         toast({ title: t('toast.sharedSuccessfully.title') });
@@ -130,7 +132,7 @@ export default function HomePage() {
       }
     } else {
       try {
-        await navigator.clipboard.writeText(`Simplified T&C for ${shareUrl}:\n\n${shareSummary}\n\nOriginal URL: ${shareUrl}`);
+        await navigator.clipboard.writeText(`${shareText}\n\nOriginal URL: ${shareUrl}`);
         toast({ title: t('toast.copiedToClipboard.title'), description: t('toast.copiedToClipboard.description') });
       } catch (err) {
         console.error('Failed to copy to clipboard: ', err);
@@ -248,7 +250,7 @@ export default function HomePage() {
               <div className="py-4 space-y-2 text-sm">
                 <p className="text-muted-foreground">{t('contactDialog.intro')}</p>
                 <p className="font-medium">{t('contactDialog.email')}</p>
-                <p className="text-xs text-muted-foreground italic">{t('contactDialog.note')}</p> {/* Added this key back for the dialog */}
+                <p className="text-xs text-muted-foreground italic">{t('contactDialog.note')}</p>
               </div>
               <DialogFooter>
                  <DialogClose asChild>

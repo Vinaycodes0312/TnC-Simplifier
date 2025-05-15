@@ -13,6 +13,7 @@ export default {
       unexpected: 'விதிமுறைகளையும் நிபந்தனைகளையும் எளிதாக்கும்போது எதிர்பாராத பிழை ஏற்பட்டது. தயவுசெய்து மீண்டும் முயற்சிக்கவும்.',
     },
     shareCurrentSummary: 'தற்போதைய சுருக்கத்தைப் பகிரவும்',
+    shareTextPrefix: "இதோ {url} க்கான விதிமுறைகள் மற்றும் நிபந்தனைகளின் எளிதாக்கப்பட்ட சுருக்கம், {appName} ஆல் உருவாக்கப்பட்டது:",
     footerText: '© {year} T&C Simplifier. சிறப்பாகவும் வேகமாகவும் புரிந்து கொள்ளுங்கள்.',
     helpAndSupport: 'உதவி மற்றும் ஆதரவு',
     developerContact: 'டெவலப்பர் தொடர்பு',
@@ -99,7 +100,8 @@ export default {
   contactDialog: {
     title: "டெவலப்பர் தொடர்பு",
     intro: "விசாரணைகள், கருத்துகள் அல்லது ஆதரவுக்கு, தயவுசெய்து தொடர்பு கொள்ளவும்:",
-    email: "vinay.sharma03d@gmail.com", // Placeholder
+    email: "vinay.sharma03d@gmail.com", 
+    note: "தயவுசெய்து கவனிக்கவும்: இது ஒரு டெமோ பயன்பாடு.",
   },
   dialog: {
     close: "மூடு",

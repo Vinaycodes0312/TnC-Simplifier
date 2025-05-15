@@ -13,6 +13,7 @@ export default {
       unexpected: 'শর্তাবলী সরল করার সময় একটি অপ্রত্যাশিত ত্রুটি ঘটেছে। অনুগ্রহ করে আবার চেষ্টা করুন।',
     },
     shareCurrentSummary: 'বর্তমান সারাংশ শেয়ার করুন',
+    shareTextPrefix: "এখানে {url} এর জন্য T&C-এর একটি সরলীকৃত সারাংশ দেওয়া হল, যা {appName} দ্বারা তৈরি করা হয়েছে:",
     footerText: '© {year} T&C Simplifier. আরও ভাল, দ্রুত বুঝুন।',
     helpAndSupport: 'সহায়তা ও সমর্থন',
     developerContact: 'ডেভেলপার যোগাযোগ',
@@ -99,7 +100,8 @@ export default {
   contactDialog: {
     title: "ডেভেলপার যোগাযোগ",
     intro: "অনুসন্ধান, প্রতিক্রিয়া বা সহায়তার জন্য, অনুগ্রহ করে যোগাযোগ করুন:",
-    email: "vinay.sharma03d@gmail.com", // Placeholder
+    email: "vinay.sharma03d@gmail.com", 
+    note: "অনুগ্রহ করে মনে রাখবেন: এটি একটি ডেমো অ্যাপ্লিকেশন।",
   },
   dialog: {
     close: "বন্ধ করুন",
