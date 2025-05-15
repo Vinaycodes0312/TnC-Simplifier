@@ -37,7 +37,7 @@ export async function simplifyTermsAndConditions(
 
 const simplifyTermsPrompt = ai.definePrompt({
   name: 'simplifyTermsAndConditionsPrompt',
-  model: 'googleai/gemini-1.5-flash-latest', // Ensure model is specified here
+  model: 'googleai/gemini-1.5-flash-latest', // Explicit model for this prompt
   input: {schema: SimplifyTermsAndConditionsInputSchema},
   output: {schema: SimplifyTermsAndConditionsOutputSchema},
   prompt: `You are an expert legal summarizer. You will be provided with the URL for a terms and conditions page. Your job is to extract the salient points and summarize them in a bullet-point format that is easy to understand, in {{language}}. Be sure to include important legal stipulations and user obligations.
@@ -92,6 +92,8 @@ const simplifyTermsAndConditionsFlow = ai.defineFlow(
             simpleErrorMessage = 'AI Service Error: The request to the AI service timed out.';
         } else if (e.message.includes('Must supply a `model`')) {
             simpleErrorMessage = 'AI Configuration Error: Model not correctly specified for the AI call.';
+        } else if (e.message.includes('models/gemini-1.5-flash-latest is not found for API version v1beta') || e.message.includes('not found for API version v1beta')) {
+            simpleErrorMessage = 'AI Service Error: The specified model (gemini-1.5-flash-latest) was not found for the API version being used. Check model availability or Genkit plugin configuration.';
         } else {
             // Use the first line of the error message if it's available
             simpleErrorMessage = `AI Service Error: ${e.message.split('\n')[0]}`;
