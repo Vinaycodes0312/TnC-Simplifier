@@ -13,6 +13,7 @@ export default {
       unexpected: 'ਨਿਯਮਾਂ ਅਤੇ ਸ਼ਰਤਾਂ ਨੂੰ ਸਰਲ ਬਣਾਉਂਦੇ ਸਮੇਂ ਇੱਕ ਅਚਾਨਕ ਗਲਤੀ ਆਈ। ਕਿਰਪਾ ਕਰਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।',
     },
     shareCurrentSummary: 'ਮੌਜੂਦਾ ਸੰਖੇਪ ਸਾਂਝਾ ਕਰੋ',
+    shareTextPrefix: "{url} ਲਈ T&C ਦਾ ਇੱਕ ਸਰਲ ਸੰਖੇਪ ਇੱਥੇ ਹੈ, ਜੋ {appName} ਦੁਆਰਾ ਤਿਆਰ ਕੀਤਾ ਗਿਆ ਹੈ:",
     footerText: '© {year} T&C Simplifier. ਬਿਹਤਰ, ਤੇਜ਼ੀ ਨਾਲ ਸਮਝੋ।',
     helpAndSupport: 'ਮਦਦ ਅਤੇ ਸਹਾਇਤਾ',
     developerContact: 'ਡਿਵੈਲਪਰ ਸੰਪਰਕ',
@@ -99,7 +100,8 @@ export default {
   contactDialog: {
     title: "ਡਿਵੈਲਪਰ ਸੰਪਰਕ",
     intro: "ਪੁੱਛਗਿੱਛ, ਫੀਡਬੈਕ ਜਾਂ ਸਹਾਇਤਾ ਲਈ, ਕਿਰਪਾ ਕਰਕੇ ਸੰਪਰਕ ਕਰੋ:",
-    email: "vinay.sharma03d@gmail.com", // Placeholder
+    email: "vinay.sharma03d@gmail.com", 
+    note: "ਕਿਰਪਾ ਕਰਕੇ ਨੋਟ ਕਰੋ: ਇਹ ਇੱਕ ਡੈਮੋ ਐਪਲੀਕੇਸ਼ਨ ਹੈ।",
   },
   dialog: {
     close: "ਬੰਦ ਕਰੋ",

@@ -13,6 +13,7 @@ export default {
       unexpected: 'നിബന്ധനകളും വ്യവസ്ഥകളും ലളിതമാക്കുമ്പോൾ ഒരു അപ്രതീക്ഷിത പിശക് സംഭവിച്ചു. ദയവായി വീണ്ടും ശ്രമിക്കുക.',
     },
     shareCurrentSummary: 'നിലവിലെ സംഗ്രഹം പങ്കിടുക',
+    shareTextPrefix: "{url}-യുടെ നിബന്ധനകളുടെയും വ്യവസ്ഥകളുടെയും ലളിതമായ സംഗ്രഹം ഇതാ, {appName} സൃഷ്ടിച്ചത്:",
     footerText: '© {year} T&C Simplifier. നന്നായി, വേഗത്തിൽ മനസ്സിലാക്കുക.',
     helpAndSupport: 'സഹായവും പിന്തുണയും',
     developerContact: 'ഡെവലപ്പർ കോൺടാക്റ്റ്',
@@ -99,7 +100,8 @@ export default {
   contactDialog: {
     title: "ഡെവലപ്പർ കോൺടാക്റ്റ്",
     intro: "അന്വേഷണങ്ങൾക്കോ, ഫീഡ്‌ബാക്കിനോ, പിന്തുണയ്‌ക്കോ ദയവായി ബന്ധപ്പെടുക:",
-    email: "vinay.sharma03d@gmail.com", // Placeholder
+    email: "vinay.sharma03d@gmail.com", 
+    note: "ദയവായി ശ്രദ്ധിക്കുക: ഇതൊരു ഡെമോ ആപ്ലിക്കേഷനാണ്.",
   },
   dialog: {
     close: "അടയ്ക്കുക",

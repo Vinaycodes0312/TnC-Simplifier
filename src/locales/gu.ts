@@ -13,6 +13,7 @@ export default {
       unexpected: 'નિયમો અને શરતોને સરળ બનાવતી વખતે અનપેક્ષિત ભૂલ આવી. કૃપા કરીને ફરી પ્રયાસ કરો.',
     },
     shareCurrentSummary: 'વર્તમાન સારાંશ શેર કરો',
+    shareTextPrefix: "{url} માટે T&C નો સરળ સારાંશ અહીં છે, જે {appName} દ્વારા જનરેટ કરાયો છે:",
     footerText: '© {year} T&C Simplifier. વધુ સારી રીતે, ઝડપથી સમજો.',
     helpAndSupport: 'મદદ અને સમર્થન',
     developerContact: 'વિકાસકર્તા સંપર્ક',
@@ -99,7 +100,8 @@ export default {
   contactDialog: {
     title: "વિકાસકર્તા સંપર્ક",
     intro: "પૂછપરછ, પ્રતિસાદ અથવા સમર્થન માટે, કૃપા કરીને સંપર્ક કરો:",
-    email: "vinay.sharma03d@gmail.com", // Placeholder
+    email: "vinay.sharma03d@gmail.com", 
+    note: "કૃપા કરીને નોંધો: આ એક ડેમો એપ્લિકેશન છે.",
   },
   dialog: {
     close: "બંધ કરો",

@@ -13,6 +13,7 @@ export default {
       unexpected: 'ସର୍ତ୍ତାବଳୀ ଏବଂ ଅବସ୍ଥାକୁ ସରଳ କରିବା ସମୟରେ ଏକ ଅପ୍ରତ୍ୟାଶିତ ତ୍ରୁଟି ଘଟିଲା | ଦୟାକରି ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ |',
     },
     shareCurrentSummary: 'ସାମ୍ପ୍ରତିକ ସାରାଂଶ ସେୟାର କରନ୍ତୁ',
+    shareTextPrefix: "{url} ପାଇଁ T&Cର ଏକ ସରଳୀକୃତ ସାରାଂଶ ଏଠାରେ ଅଛି, ଯାହା {appName} ଦ୍ୱାରା ସୃଷ୍ଟି କରାଯାଇଛି:",
     footerText: '© {year} T&C Simplifier. ଭଲଭାବେ, ଶୀଘ୍ର ବୁଝନ୍ତୁ |',
     helpAndSupport: 'ସହାୟତା ଓ ସମର୍ଥନ',
     developerContact: 'ବିକାଶକାରୀ ସମ୍ପର୍କ',
@@ -99,7 +100,8 @@ export default {
   contactDialog: {
     title: "ବିକାଶକାରୀ ସମ୍ପର୍କ",
     intro: "ଅନୁସନ୍ଧାନ, ମତାମତ କିମ୍ବା ସମର୍ଥନ ପାଇଁ, ଦୟାକରି ସମ୍ପର୍କ କରନ୍ତୁ:",
-    email: "vinay.sharma03d@gmail.com", // Placeholder
+    email: "vinay.sharma03d@gmail.com", 
+    note: "ଦୟାକରି ଧ୍ୟାନ ଦିଅନ୍ତୁ: ଏହା ଏକ ଡେମୋ ପ୍ରୟୋଗ ଅଟେ |",
   },
   dialog: {
     close: "ବନ୍ଦ କରନ୍ତୁ",
