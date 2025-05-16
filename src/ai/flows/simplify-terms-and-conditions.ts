@@ -78,6 +78,7 @@ const simplifyTermsAndConditionsFlow = ai.defineFlow(
       
       let detailedErrorMessage = "Unknown AI service error.";
       let errorName = "UnknownError";
+      let clientFacingErrorDetail = "Error"; // Default client-facing detail
 
       if (e instanceof Error) {
         errorName = e.name;
@@ -109,11 +110,23 @@ const simplifyTermsAndConditionsFlow = ai.defineFlow(
         }
       }
       
-      // Simplify the client-facing error message
-      const clientErrorMessage = `AI Service Error: ${errorName}. Please check server logs for more details.`;
-      console.error(`Re-throwing error from flow. Original error name: ${errorName}, message: ${detailedErrorMessage}. Client error to be thrown: ${clientErrorMessage}`);
+      // Attempt to categorize the error for a slightly more specific client message
+      if (detailedErrorMessage.toLowerCase().includes("api key") || detailedErrorMessage.toLowerCase().includes("permission_denied")) {
+        clientFacingErrorDetail = "API Key/Permission Issue";
+      } else if (detailedErrorMessage.toLowerCase().includes("quota") || detailedErrorMessage.toLowerCase().includes("exhausted")) {
+        clientFacingErrorDetail = "API Quota/Limit Issue";
+      } else if (detailedErrorMessage.toLowerCase().includes("model") && detailedErrorMessage.toLowerCase().includes("not found")) {
+        clientFacingErrorDetail = "Model Not Found";
+      } else if (detailedErrorMessage.toLowerCase().includes("invalid json payload") || detailedErrorMessage.toLowerCase().includes("bad request")) {
+          clientFacingErrorDetail = "Invalid Request to AI";
+      } else if (errorName !== "UnknownError" && errorName !== "Error") {
+        clientFacingErrorDetail = errorName;
+      }
+
+
+      const clientErrorMessage = `AI Service Error: ${clientFacingErrorDetail}. Please check server logs for details.`;
+      console.error(`Re-throwing error from flow. Original error name: ${errorName}, original message: "${detailedErrorMessage}". Client error to be thrown: "${clientErrorMessage}"`);
       throw new Error(clientErrorMessage);
     }
   }
 );
-
