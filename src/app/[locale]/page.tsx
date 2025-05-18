@@ -97,8 +97,9 @@ export default function HomePage() {
       }
     } catch (e: any) {
       console.error("HomePage: Simplification error caught in handleSimplify:", e);
-      console.error("HomePage: Error message to be set:", e.message || t('home.error.unexpected'));
-      setError(e.message || t('home.error.unexpected'));
+      const errorMessage = (typeof e?.message === 'string' && e.message) ? e.message : t('home.error.unexpected');
+      console.error("HomePage: Error message to be set:", errorMessage);
+      setError(errorMessage);
     } finally {
       setIsLoading(false);
     }
@@ -267,4 +268,3 @@ export default function HomePage() {
     </main>
   );
 }
-
