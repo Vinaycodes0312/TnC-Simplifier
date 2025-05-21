@@ -11,7 +11,7 @@ import { LanguageSwitcher } from '@/components/language-switcher';
 import { simplifyTermsAndConditions } from '@/ai/flows/simplify-terms-and-conditions';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
-import { ScrollText, Terminal, Share2, Mail, Info } from "lucide-react"; // Changed StickyNote to ScrollText
+import { ScrollText, Terminal, Share2, Mail, Info } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -57,7 +57,7 @@ export default function HomePage() {
         description: t('toast.storageError.description'),
       });
     }
-  }, [t, toast]);
+  }, [t, toast]); // Added t and toast to dependency array
 
   const saveHistory = (newHistory: HistoryEntry[]) => {
     try {
@@ -171,7 +171,7 @@ export default function HomePage() {
 
       <div className="text-center mb-10 sm:mb-12">
         <div className="inline-flex items-center justify-center p-3 bg-primary/10 rounded-full mb-4">
-           <ScrollText className="h-10 w-10 sm:h-12 sm:w-12 text-primary" /> {/* Changed StickyNote back to ScrollText */}
+           <ScrollText className="h-10 w-10 sm:h-12 sm:w-12 text-primary" />
         </div>
         <h1 className="text-4xl sm:text-5xl font-bold text-primary tracking-tight">{t('home.title')}</h1>
         <p className="mt-3 text-lg sm:text-xl text-muted-foreground max-w-xl mx-auto">
@@ -271,6 +271,3 @@ export default function HomePage() {
     </main>
   );
 }
-
-
-    

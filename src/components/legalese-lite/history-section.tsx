@@ -1,3 +1,4 @@
+
 // src/components/legalese-lite/history-section.tsx
 "use client";
 
@@ -26,10 +27,9 @@ interface HistorySectionProps {
 export const HistorySection: FC<HistorySectionProps> = ({ history, onShareItem, onDeleteItem, onClearAll, currentLocale }) => {
   const t = useI18n();
 
-  if (history.length === 0 && !t) { // Ensure t is loaded
+  if (!t) { // Guard against t not being available yet
     return null; 
   }
-
 
   return (
     <Card className="mt-10 w-full max-w-2xl shadow-lg">
