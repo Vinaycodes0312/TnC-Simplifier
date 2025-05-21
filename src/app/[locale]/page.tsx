@@ -11,7 +11,7 @@ import { LanguageSwitcher } from '@/components/language-switcher';
 import { simplifyTermsAndConditions } from '@/ai/flows/simplify-terms-and-conditions';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
-import { StickyNote, Terminal, Share2, Mail, Info } from "lucide-react";
+import { ScrollText, Terminal, Share2, Mail, Info } from "lucide-react"; // Changed StickyNote to ScrollText
 import {
   Dialog,
   DialogContent,
@@ -133,7 +133,7 @@ export default function HomePage() {
           console.log('Share operation was cancelled by the user.');
         } else {
           console.error('Error sharing:', err);
-          // No toast for actual errors here, as a destructive toast is not suitable for this.
+           // No toast for actual errors here, as a destructive toast is not suitable for this.
           // The console error is sufficient for debugging.
         }
       }
@@ -171,7 +171,7 @@ export default function HomePage() {
 
       <div className="text-center mb-10 sm:mb-12">
         <div className="inline-flex items-center justify-center p-3 bg-primary/10 rounded-full mb-4">
-           <StickyNote className="h-10 w-10 sm:h-12 sm:w-12 text-primary" />
+           <ScrollText className="h-10 w-10 sm:h-12 sm:w-12 text-primary" /> {/* Changed StickyNote back to ScrollText */}
         </div>
         <h1 className="text-4xl sm:text-5xl font-bold text-primary tracking-tight">{t('home.title')}</h1>
         <p className="mt-3 text-lg sm:text-xl text-muted-foreground max-w-xl mx-auto">
@@ -272,3 +272,5 @@ export default function HomePage() {
   );
 }
 
+
+    
