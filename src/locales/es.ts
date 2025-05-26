@@ -101,7 +101,7 @@ export default {
     title: "Contacto del Desarrollador",
     intro: "Para consultas, comentarios o soporte, por favor contacta a:",
     email: "vinay.sharma03d@gmail.com", 
-    note: "Por favor, ten en cuenta: Esta es una aplicación de demostración.",
+    note: "Please include details about the issue or your question in your message.",
   },
   dialog: {
     close: "Cerrar",

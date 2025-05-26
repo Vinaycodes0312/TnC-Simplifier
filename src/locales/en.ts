@@ -101,7 +101,7 @@ export default {
     title: "Developer Contact",
     intro: "For inquiries, feedback, or support, please reach out to:",
     email: "vinay.sharma03d@gmail.com",
-    note: "Please note: This is a demo application.",
+    note: "Please include details about the issue or your question in your message.",
   },
   dialog: {
     close: "Close",

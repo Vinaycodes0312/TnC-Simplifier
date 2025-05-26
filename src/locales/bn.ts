@@ -101,7 +101,7 @@ export default {
     title: "ডেভেলপার যোগাযোগ",
     intro: "অনুসন্ধান, প্রতিক্রিয়া বা সহায়তার জন্য, অনুগ্রহ করে যোগাযোগ করুন:",
     email: "vinay.sharma03d@gmail.com", 
-    note: "অনুগ্রহ করে মনে রাখবেন: এটি একটি ডেমো অ্যাপ্লিকেশন।",
+    note: "Please include details about the issue or your question in your message.",
   },
   dialog: {
     close: "বন্ধ করুন",
