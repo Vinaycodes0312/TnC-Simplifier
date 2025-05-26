@@ -105,5 +105,11 @@ export default {
   },
   dialog: {
     close: "మూసివేయి",
+  },
+  themeToggle: {
+    toggle: "థీమ్ మార్చండి",
+    light: "తేలికైనది",
+    dark: "ముదురు",
+    system: "సిస్టమ్",
   }
 } as const;

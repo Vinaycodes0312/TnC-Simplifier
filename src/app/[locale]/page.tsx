@@ -1,4 +1,3 @@
-
 // src/app/[locale]/page.tsx
 "use client";
 
@@ -8,6 +7,7 @@ import { UrlInputForm } from '@/components/legalese-lite/url-input-form';
 import { SummaryDisplay } from '@/components/legalese-lite/summary-display';
 import { HistorySection } from '@/components/legalese-lite/history-section';
 import { LanguageSwitcher } from '@/components/language-switcher';
+import { ThemeToggle } from '@/components/theme-toggle'; // Added ThemeToggle
 import { simplifyTermsAndConditions } from '@/ai/flows/simplify-terms-and-conditions';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
@@ -57,7 +57,7 @@ export default function HomePage() {
         description: t('toast.storageError.description'),
       });
     }
-  }, [t, toast]); // Added t and toast to dependency array
+  }, [t, toast]); 
 
   const saveHistory = (newHistory: HistoryEntry[]) => {
     try {
@@ -133,8 +133,6 @@ export default function HomePage() {
           console.log('Share operation was cancelled by the user.');
         } else {
           console.error('Error sharing:', err);
-           // No toast for actual errors here, as a destructive toast is not suitable for this.
-          // The console error is sufficient for debugging.
         }
       }
     } else {
@@ -143,7 +141,6 @@ export default function HomePage() {
         toast({ title: t('toast.copiedToClipboard.title'), description: t('toast.copiedToClipboard.description') });
       } catch (err) {
         console.error('Failed to copy to clipboard: ', err);
-        // No toast for actual errors here
       }
     }
   };
@@ -210,7 +207,8 @@ export default function HomePage() {
       
       <footer className="mt-16 mb-8 w-full max-w-2xl flex flex-col items-center text-sm text-muted-foreground">
         <p className="mb-4 text-center">{t('home.footerText', { year: new Date().getFullYear() })}</p>
-        <div className="flex flex-wrap justify-center items-center gap-4">
+        <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-4">
+          <ThemeToggle />
           <LanguageSwitcher />
 
           <Dialog open={isHelpDialogOpen} onOpenChange={setIsHelpDialogOpen}>

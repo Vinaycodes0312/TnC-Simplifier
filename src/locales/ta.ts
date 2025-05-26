@@ -105,5 +105,11 @@ export default {
   },
   dialog: {
     close: "மூடு",
+  },
+  themeToggle: {
+    toggle: "தீம் மாற்றுக",
+    light: "ஒளி",
+    dark: "இருள்",
+    system: "கணினி",
   }
 } as const;

@@ -105,5 +105,11 @@ export default {
   },
   dialog: {
     close: "ବନ୍ଦ କରନ୍ତୁ",
+  },
+  themeToggle: {
+    toggle: "ଥିମ୍ ପରିବର୍ତ୍ତନ କରନ୍ତୁ",
+    light: "ଆଲୋକ",
+    dark: "ଅନ୍ଧକାର",
+    system: "ସିଷ୍ଟମ୍",
   }
 } as const;

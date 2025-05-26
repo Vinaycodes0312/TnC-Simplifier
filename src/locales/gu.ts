@@ -105,5 +105,11 @@ export default {
   },
   dialog: {
     close: "બંધ કરો",
+  },
+  themeToggle: {
+    toggle: "થીમ બદલો",
+    light: "હલકો",
+    dark: "ઘેરો",
+    system: "સિસ્ટમ",
   }
 } as const;

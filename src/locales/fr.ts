@@ -95,7 +95,7 @@ export default {
     q2Title: "Mes données sont-elles sauvegardées ?",
     q2Answer: "Votre historique de simplification (URL, résumé, horodatage) est sauvegardé localement dans le stockage de votre navigateur. Il n'est envoyé à aucun serveur. Vous pouvez effacer votre historique à tout moment.",
     q3Title: "Que faire si je rencontre une erreur ?",
-    q3Answer: "Assurez-vous que l'URL est correcte et accessible publiquement. Certaines structures de page complexes ou des documents très longs могут occasionnellement causer des problèmes. Essayez une URL différente si les problèmes persistent.",
+    q3Answer: "Assurez-vous que l'URL est correcte et accessible publiquement. Certaines structures de page complexes ou des documents très longs peuvent occasionnellement causer des problèmes. Essayez une URL différente si les problèmes persistent.",
   },
   contactDialog: {
     title: "Contact Développeur",
@@ -105,5 +105,11 @@ export default {
   },
   dialog: {
     close: "Fermer",
+  },
+  themeToggle: {
+    toggle: "Changer de thème",
+    light: "Clair",
+    dark: "Sombre",
+    system: "Système",
   }
 } as const;

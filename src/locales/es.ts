@@ -105,5 +105,11 @@ export default {
   },
   dialog: {
     close: "Cerrar",
+  },
+  themeToggle: {
+    toggle: "Cambiar tema",
+    light: "Claro",
+    dark: "Oscuro",
+    system: "Sistema",
   }
 } as const;

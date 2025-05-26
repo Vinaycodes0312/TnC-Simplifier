@@ -105,5 +105,11 @@ export default {
   },
   dialog: {
     close: "അടയ്ക്കുക",
+  },
+  themeToggle: {
+    toggle: "തീം മാറ്റുക",
+    light: "ലൈറ്റ്",
+    dark: "ഡാർക്ക്",
+    system: "സിസ്റ്റം",
   }
 } as const;

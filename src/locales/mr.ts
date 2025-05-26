@@ -105,5 +105,11 @@ export default {
   },
   dialog: {
     close: "बंद करा",
+  },
+  themeToggle: {
+    toggle: "थीम बदला",
+    light: "फिकट",
+    dark: "गडद",
+    system: "सिस्टम",
   }
 } as const;
