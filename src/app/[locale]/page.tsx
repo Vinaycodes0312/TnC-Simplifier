@@ -78,6 +78,7 @@ export default function HomePage() {
     setSummary(null);
     setError(null);
     setCurrentUrl(url); 
+    console.log("HomePage: isLoading set to true");
 
     try {
       const result = await simplifyTermsAndConditions({ url, language });
@@ -105,6 +106,7 @@ export default function HomePage() {
       setError(errorMessage);
     } finally {
       setIsLoading(false);
+      console.log("HomePage: isLoading set to false");
     }
   };
 
@@ -169,7 +171,7 @@ export default function HomePage() {
   };
 
   return (
-    <main className="flex flex-col items-center justify-start min-h-screen bg-background text-foreground pt-0 sm:p-0">
+    <main className="flex flex-col items-center justify-start min-h-screen bg-background text-foreground pt-4 sm:p-0">
       <div className="w-full max-w-2xl h-16 sm:h-18 bg-primary mb-6 relative overflow-hidden">
         {isLoading && (
           <div className="absolute top-0 left-0 h-full w-1/2 bg-primary-foreground/30 animate-shimmer-slide"></div>
