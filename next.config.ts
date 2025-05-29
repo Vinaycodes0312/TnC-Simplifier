@@ -19,10 +19,9 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  experimental: {
-    // This is the new correct option name
-    serverExternalPackages: ['@opentelemetry/exporter-jaeger', '@grpc/grpc-js'],
-  },
+  // Corrected: serverExternalPackages should be a top-level property.
+  // This informs Next.js how to handle these packages in server environments.
+  serverExternalPackages: ['@opentelemetry/exporter-jaeger', '@grpc/grpc-js'],
 };
 
 export default nextConfig;
