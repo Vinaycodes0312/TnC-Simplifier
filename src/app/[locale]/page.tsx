@@ -172,14 +172,14 @@ export default function HomePage() {
 
   return (
     <main className="flex flex-col items-center justify-start min-h-screen bg-background text-foreground pt-4">
-      <div className="w-full max-w-2xl h-16 sm:h-18 bg-primary mb-6 relative overflow-hidden">
+      <div className="w-full max-w-2xl h-16 sm:h-18 bg-primary mb-4 relative overflow-hidden">
         {isLoading && (
           <div className="absolute top-0 left-0 h-full w-1/2 bg-primary-foreground/30 animate-shimmer-slide"></div>
         )}
       </div>
 
       <div className="text-center mb-10 sm:mb-12">
-        <div className="inline-flex items-center justify-center p-2 bg-primary/10 rounded-full mb-2">
+        <div className="inline-flex items-center justify-center p-2 bg-primary/10 rounded-full mb-4">
            <ScrollText className="h-10 w-10 sm:h-12 sm:w-12 text-primary" />
         </div>
         <h1 className="text-4xl sm:text-5xl font-bold text-primary tracking-tight">{t('home.title')}</h1>
