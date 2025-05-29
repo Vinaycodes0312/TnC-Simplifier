@@ -159,7 +159,7 @@ export default function HomePage() {
   };
 
   return (
-    <main className="flex flex-col items-center justify-start min-h-screen bg-background text-foreground p-4 sm:p-8 pt-12 sm:pt-20">
+    <main className="flex flex-col items-center justify-start min-h-screen bg-background text-foreground p-4 sm:p-8">
       <div className="w-full max-w-2xl h-16 sm:h-18 bg-primary mb-8 relative overflow-hidden">
         {isLoading && (
           <div className="absolute top-0 left-0 h-full w-1/2 bg-primary-foreground/30 animate-shimmer-slide"></div>
