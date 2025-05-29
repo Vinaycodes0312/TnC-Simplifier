@@ -98,7 +98,7 @@ export default function HomePage() {
       }
     } catch (e: any) {
       console.error("HomePage: Simplification error caught in handleSimplify:", e);
-      if (e?.digest) {
+       if (e?.digest) {
         console.error("HomePage: Error digest:", e.digest);
       }
       const errorMessage = (typeof e?.message === 'string' && e.message) ? e.message : t('home.error.unexpected');
@@ -172,7 +172,7 @@ export default function HomePage() {
 
   return (
     <main className="flex flex-col items-center justify-start min-h-screen bg-background text-foreground pt-4">
-      <div className="w-full max-w-2xl h-16 sm:h-18 bg-gradient-to-b from-[hsl(180,100%,25%)] to-[hsl(180,100%,20%)] dark:from-[hsl(180,100%,35%)] dark:to-[hsl(180,100%,30%)] mb-4 relative overflow-hidden">
+      <div className="w-full max-w-2xl h-16 sm:h-18 bg-gradient-to-b from-[hsl(180,100%,25%)] via-[hsl(180,100%,35%)] to-[hsl(180,100%,25%)] dark:from-[hsl(180,100%,35%)] dark:via-[hsl(180,100%,45%)] dark:to-[hsl(180,100%,35%)] mb-4 relative overflow-hidden">
         {isLoading && (
           <div className="absolute top-0 left-0 h-full w-1/2 bg-primary-foreground/30 animate-shimmer-slide"></div>
         )}
