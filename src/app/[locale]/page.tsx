@@ -7,7 +7,7 @@ import { UrlInputForm } from '@/components/legalese-lite/url-input-form';
 import { SummaryDisplay } from '@/components/legalese-lite/summary-display';
 import { HistorySection } from '@/components/legalese-lite/history-section';
 import { LanguageSwitcher } from '@/components/language-switcher';
-import { ThemeToggle } from '@/components/theme-toggle'; // Added ThemeToggle
+import { ThemeToggle } from '@/components/theme-toggle';
 import { simplifyTermsAndConditions } from '@/ai/flows/simplify-terms-and-conditions';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
@@ -133,14 +133,24 @@ export default function HomePage() {
           console.log('Share operation was cancelled by the user.');
         } else {
           console.error('Error sharing:', err);
+          toast({
+            variant: "destructive",
+            title: t('toast.shareError.title'),
+            description: err.message || t('toast.shareError.description'),
+          });
         }
       }
     } else {
       try {
         await navigator.clipboard.writeText(`${shareText}\n\nOriginal URL: ${shareUrl}`);
         toast({ title: t('toast.copiedToClipboard.title'), description: t('toast.copiedToClipboard.description') });
-      } catch (err) {
+      } catch (err: any) {
         console.error('Failed to copy to clipboard: ', err);
+        toast({
+          variant: "destructive",
+          title: t('toast.copyError.title'),
+          description: err.message || t('toast.copyError.description'),
+        });
       }
     }
   };
@@ -159,7 +169,7 @@ export default function HomePage() {
   };
 
   return (
-    <main className="flex flex-col items-center justify-start min-h-screen bg-background text-foreground p-4 sm:p-8">
+    <main className="flex flex-col items-center justify-start min-h-screen bg-background text-foreground pt-0 sm:p-8">
       <div className="w-full max-w-2xl h-16 sm:h-18 bg-primary mb-8 relative overflow-hidden">
         {isLoading && (
           <div className="absolute top-0 left-0 h-full w-1/2 bg-primary-foreground/30 animate-shimmer-slide"></div>
@@ -167,7 +177,7 @@ export default function HomePage() {
       </div>
 
       <div className="text-center mb-10 sm:mb-12">
-        <div className="inline-flex items-center justify-center p-3 bg-primary/10 rounded-full mb-4">
+        <div className="inline-flex items-center justify-center p-2 bg-primary/10 rounded-full mb-2">
            <ScrollText className="h-10 w-10 sm:h-12 sm:w-12 text-primary" />
         </div>
         <h1 className="text-4xl sm:text-5xl font-bold text-primary tracking-tight">{t('home.title')}</h1>
