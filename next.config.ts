@@ -1,3 +1,4 @@
+
 import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
@@ -19,7 +20,8 @@ const nextConfig: NextConfig = {
     ],
   },
   experimental: {
-    serverComponentsExternalPackages: ['@opentelemetry/exporter-jaeger'],
+    // This is the new correct option name
+    serverExternalPackages: ['@opentelemetry/exporter-jaeger', '@grpc/grpc-js'],
   },
 };
 
