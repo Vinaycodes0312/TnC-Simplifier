@@ -11,7 +11,7 @@ import { ThemeToggle } from '@/components/theme-toggle';
 import { simplifyTermsAndConditions } from '@/ai/flows/simplify-terms-and-conditions';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
-import { ScrollText, Terminal, Share2, Mail, Info } from "lucide-react";
+import { ScrollText, Terminal, Share2, Mail, Info, StickyNote } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -169,8 +169,8 @@ export default function HomePage() {
   };
 
   return (
-    <main className="flex flex-col items-center justify-start min-h-screen bg-background text-foreground pt-0 sm:p-8">
-      <div className="w-full max-w-2xl h-16 sm:h-18 bg-primary mb-8 relative overflow-hidden">
+    <main className="flex flex-col items-center justify-start min-h-screen bg-background text-foreground pt-0 sm:p-0">
+      <div className="w-full max-w-2xl h-16 sm:h-18 bg-primary mb-6 relative overflow-hidden">
         {isLoading && (
           <div className="absolute top-0 left-0 h-full w-1/2 bg-primary-foreground/30 animate-shimmer-slide"></div>
         )}
