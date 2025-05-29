@@ -32,7 +32,6 @@ export function register() {
       } catch (error) {
         console.error('Failed to initialize JaegerExporter. Tracing to Jaeger will be disabled for this session.', error);
         // If JaegerExporter fails to initialize, spanProcessor remains undefined.
-        // The SDK will still start, but traces might not be exported to Jaeger.
       }
     } else {
       console.log('Jaeger exporter not configured for OpenTelemetry in this environment (OTEL_EXPORTER_JAEGER_ENDPOINT not set and not in development mode).');
@@ -59,32 +58,30 @@ export function register() {
     if (spanProcessor) {
       sdkConfig.spanProcessor = spanProcessor;
     } else {
-      console.log('OpenTelemetry SDK starting without a Jaeger span processor. Traces may not be exported to Jaeger.');
+      console.log('OpenTelemetry SDK configuring without a Jaeger span processor. Traces may not be exported to Jaeger unless other exporters are configured via environment variables.');
     }
     
     const sdk = new NodeSDK(sdkConfig);
 
     try {
       sdk.start();
-      console.log('OpenTelemetry SDK started.');
+      console.log('OpenTelemetry SDK started successfully.');
     } catch (error) {
       console.error('Error starting OpenTelemetry SDK:', error);
+      // Potentially prevent app crash if SDK start fails critically
+      // Depending on the error, the app might still be partially functional or completely broken.
     }
     
 
     // Graceful shutdown
-    process.on('SIGTERM', () => {
+    const shutdown = () => {
       sdk.shutdown()
         .then(() => console.log('OpenTelemetry SDK shut down successfully.'))
         .catch((error) => console.error('Error shutting down OpenTelemetry SDK:', error))
         .finally(() => process.exit(0));
-    });
-    process.on('SIGINT', () => {
-      sdk.shutdown()
-        .then(() => console.log('OpenTelemetry SDK shut down successfully (SIGINT).'))
-        .catch((error) => console.error('Error shutting down OpenTelemetry SDK (SIGINT):', error))
-        .finally(() => process.exit(0));
-    });
+    };
+    process.on('SIGTERM', shutdown);
+    process.on('SIGINT', shutdown);
 
   } else {
     console.log('Skipping OpenTelemetry registration for non-Node.js runtime:', process.env.NEXT_RUNTIME);
