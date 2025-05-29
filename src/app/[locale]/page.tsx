@@ -172,17 +172,17 @@ export default function HomePage() {
 
   return (
     <main className="flex flex-col items-center justify-start min-h-screen bg-background text-foreground pt-4">
-      <div className="w-full max-w-2xl h-16 sm:h-18 bg-gradient-to-b from-[hsl(180,100%,25%)] via-[hsl(180,100%,35%)] to-[hsl(180,100%,25%)] dark:from-[hsl(180,100%,35%)] dark:via-[hsl(180,100%,45%)] dark:to-[hsl(180,100%,35%)] mb-4 relative overflow-hidden">
+      <div className="w-full max-w-2xl h-16 sm:h-18 bg-gradient-to-b from-[hsl(180,100%,25%)] via-[hsl(180,100%,40%)] to-[hsl(180,100%,25%)] dark:from-[hsl(180,100%,35%)] dark:via-[hsl(180,100%,50%)] dark:to-[hsl(180,100%,35%)] mb-4 relative overflow-hidden">
         {isLoading && (
           <div className="absolute top-0 left-0 h-full w-1/2 bg-primary-foreground/30 animate-shimmer-slide"></div>
         )}
       </div>
 
       <div className="text-center mb-4">
-        <div className="inline-flex items-center justify-center p-2 rounded-full mb-4 bg-gradient-to-b from-[hsl(180,100%,25%)] via-[hsl(180,100%,35%)] to-[hsl(180,100%,25%)] dark:from-[hsl(180,100%,35%)] dark:via-[hsl(180,100%,45%)] dark:to-[hsl(180,100%,35%)]">
+        <div className="inline-flex items-center justify-center p-2 rounded-full mb-4 bg-gradient-to-b from-[hsl(180,100%,25%)] via-[hsl(180,100%,40%)] to-[hsl(180,100%,25%)] dark:from-[hsl(180,100%,35%)] dark:via-[hsl(180,100%,50%)] dark:to-[hsl(180,100%,35%)]">
            <ScrollText className="h-10 w-10 sm:h-12 sm:w-12 text-primary-foreground" />
         </div>
-        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight bg-gradient-to-r from-[hsl(180,100%,25%)] via-[hsl(180,100%,35%)] to-[hsl(180,100%,25%)] dark:from-[hsl(180,100%,35%)] dark:via-[hsl(180,100%,45%)] dark:to-[hsl(180,100%,35%)] bg-clip-text text-transparent">
+        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight bg-gradient-to-r from-[hsl(180,100%,25%)] via-[hsl(180,100%,40%)] to-[hsl(180,100%,25%)] dark:from-[hsl(180,100%,35%)] dark:via-[hsl(180,100%,50%)] dark:to-[hsl(180,100%,35%)] bg-clip-text text-transparent">
           {t('home.title')}
         </h1>
         <p className="mt-3 text-lg sm:text-xl text-muted-foreground max-w-xl mx-auto">
@@ -283,3 +283,4 @@ export default function HomePage() {
     </main>
   );
 }
+
