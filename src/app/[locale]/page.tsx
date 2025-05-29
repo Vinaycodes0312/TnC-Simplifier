@@ -179,10 +179,12 @@ export default function HomePage() {
       </div>
 
       <div className="text-center mb-4">
-        <div className="inline-flex items-center justify-center p-2 bg-primary/10 rounded-full mb-4">
-           <ScrollText className="h-10 w-10 sm:h-12 sm:w-12 text-primary" />
+        <div className="inline-flex items-center justify-center p-2 rounded-full mb-4 bg-gradient-to-b from-[hsl(180,100%,25%)] via-[hsl(180,100%,35%)] to-[hsl(180,100%,25%)] dark:from-[hsl(180,100%,35%)] dark:via-[hsl(180,100%,45%)] dark:to-[hsl(180,100%,35%)]">
+           <ScrollText className="h-10 w-10 sm:h-12 sm:w-12 text-primary-foreground" />
         </div>
-        <h1 className="text-4xl sm:text-5xl font-bold text-primary tracking-tight">{t('home.title')}</h1>
+        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight bg-gradient-to-r from-[hsl(180,100%,25%)] via-[hsl(180,100%,35%)] to-[hsl(180,100%,25%)] dark:from-[hsl(180,100%,35%)] dark:via-[hsl(180,100%,45%)] dark:to-[hsl(180,100%,35%)] bg-clip-text text-transparent">
+          {t('home.title')}
+        </h1>
         <p className="mt-3 text-lg sm:text-xl text-muted-foreground max-w-xl mx-auto">
           {t('home.subtitle')}
         </p>
