@@ -12,6 +12,7 @@
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
 
+// Define Zod schemas as top-level constants
 const SimplifyTermsAndConditionsInputSchema = z.object({
   url: z.string().describe('The URL of the terms and conditions page.'),
   language: z.string().describe('The target language for the summary (e.g., "English", "Spanish", "French").')
@@ -38,8 +39,8 @@ export async function simplifyTermsAndConditions(
 const simplifyTermsPrompt = ai.definePrompt({
   name: 'simplifyTermsAndConditionsPrompt',
   model: 'googleai/gemini-1.5-flash-latest',
-  input: {schema: SimplifyTermsAndConditionsInputSchema},
-  output: {schema: SimplifyTermsAndConditionsOutputSchema},
+  input: {schema: SimplifyTermsAndConditionsInputSchema}, // Reference the schema constant
+  output: {schema: SimplifyTermsAndConditionsOutputSchema}, // Reference the schema constant
   prompt: `You are an expert legal summarizer. You will be provided with the URL for a terms and conditions page. Your job is to extract the salient points and summarize them in a bullet-point format that is easy to understand, in {{language}}. Be sure to include important legal stipulations and user obligations.
 
 URL: {{{url}}}
@@ -49,8 +50,8 @@ Language for summary: {{language}}`,
 const simplifyTermsAndConditionsFlow = ai.defineFlow(
   {
     name: 'simplifyTermsAndConditionsFlow',
-    inputSchema: SimplifyTermsAndConditionsInputSchema,
-    outputSchema: SimplifyTermsAndConditionsOutputSchema,
+    inputSchema: SimplifyTermsAndConditionsInputSchema, // Reference the schema constant
+    outputSchema: SimplifyTermsAndConditionsOutputSchema, // Reference the schema constant
   },
   async (input: SimplifyTermsAndConditionsInput) => {
     console.log(`Entering simplifyTermsAndConditionsFlow with input: ${JSON.stringify(input)}`);
@@ -122,7 +123,6 @@ const simplifyTermsAndConditionsFlow = ai.defineFlow(
       } else if (errorName !== "UnknownError" && errorName !== "Error") {
         clientFacingErrorDetail = errorName;
       }
-
 
       const clientErrorMessage = `AI Service Error: ${clientFacingErrorDetail}. Please check server logs for details.`;
       console.error(`Re-throwing error from flow. Original error name: ${errorName}, original message: "${detailedErrorMessage}". Client error to be thrown: "${clientErrorMessage}"`);
