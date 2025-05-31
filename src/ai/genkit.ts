@@ -13,6 +13,7 @@ const plugins: GenkitPlugin[] = []; // Define type for plugins array
 if (process.env.GOOGLE_API_KEY) {
   console.log('GOOGLE_API_KEY found. Attempting to initialize and add GoogleAI plugin.');
   try {
+    // Wrap the plugin instantiation in a try...catch
     plugins.push(googleAI({ apiKey: process.env.GOOGLE_API_KEY }));
     console.log('GoogleAI plugin successfully added to plugins list.');
   } catch (e: any) {
