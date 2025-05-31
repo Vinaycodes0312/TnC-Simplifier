@@ -41,6 +41,7 @@ export default function HomePage() {
   const [currentUrl, setCurrentUrl] = useState<string>("");
   const [isHelpDialogOpen, setIsHelpDialogOpen] = useState(false);
   const [isContactDialogOpen, setIsContactDialogOpen] = useState(false);
+  const [currentYear, setCurrentYear] = useState<number | null>(null);
   
 
   useEffect(() => {
@@ -57,6 +58,7 @@ export default function HomePage() {
         description: t('toast.storageError.description'),
       });
     }
+    setCurrentYear(new Date().getFullYear());
   }, [t, toast]); 
 
   const saveHistory = (newHistory: HistoryEntry[]) => {
@@ -220,7 +222,9 @@ export default function HomePage() {
       />
       
       <footer className="mt-16 mb-8 w-full max-w-2xl flex flex-col items-center text-sm text-muted-foreground">
-        <p className="mb-4 text-center">{t('home.footerText', { year: new Date().getFullYear() })}</p>
+        {currentYear && (
+          <p className="mb-4 text-center">{t('home.footerText', { year: currentYear })}</p>
+        )}
         <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-4">
           <ThemeToggle />
           <LanguageSwitcher />
