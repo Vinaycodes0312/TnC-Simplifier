@@ -31,6 +31,8 @@ const nextConfig: NextConfig = {
     'hexer', // For 'stream' error via jaeger-client path
     'handlebars', // Added to address webpack 'require.extensions' issue
     'dotprompt', // Added as it's the direct dependent on handlebars in the trace
+    '@grpc/proto-loader', // Added for fs/path errors
+    'thriftrw', // Added for fs/path errors (dependency of jaeger-client)
   ],
 };
 
