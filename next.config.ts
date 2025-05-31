@@ -29,6 +29,8 @@ const nextConfig: NextConfig = {
     'jaeger-client', // Dependency of exporter-jaeger
     '@opentelemetry/exporter-trace-otlp-grpc', // For 'fs' error via OTLP gRPC path
     'hexer', // For 'stream' error via jaeger-client path
+    'handlebars', // Added to address webpack 'require.extensions' issue
+    'dotprompt', // Added as it's the direct dependent on handlebars in the trace
   ],
 };
 
