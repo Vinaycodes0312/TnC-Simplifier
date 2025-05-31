@@ -24,9 +24,11 @@ const nextConfig: NextConfig = {
   serverExternalPackages: [
     '@opentelemetry/exporter-jaeger',
     '@grpc/grpc-js',
-    '@opentelemetry/sdk-node', // Added: Core SDK for Node.js, can pull in various exporters
-    '@opentelemetry/otlp-grpc-exporter-base', // Added: Source of 'fs' module not found
-    'jaeger-client', // Added: Dependency of exporter-jaeger, source of 'stream' module not found via 'hexer'
+    '@opentelemetry/sdk-node', // Core SDK for Node.js, can pull in various exporters
+    '@opentelemetry/otlp-grpc-exporter-base', // Source of 'fs' module not found
+    'jaeger-client', // Dependency of exporter-jaeger
+    '@opentelemetry/exporter-trace-otlp-grpc', // For 'fs' error via OTLP gRPC path
+    'hexer', // For 'stream' error via jaeger-client path
   ],
 };
 
